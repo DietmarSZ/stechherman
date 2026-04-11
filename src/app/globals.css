@@ -96,7 +96,7 @@ main {
 
 .brand-mark img {
   width: auto;
-  height: 84px;
+  height: 96px;
 }
 
 .site-nav,
@@ -111,7 +111,7 @@ main {
 .header-phone,
 .footer-phone {
   color: var(--muted);
-  font-size: 0.98rem;
+  font-size: 1.08rem;
   font-weight: 600;
 }
 
@@ -701,7 +701,7 @@ span {
   }
 
   .brand-mark img {
-    height: 68px;
+    height: 74px;
   }
 
   .button {
