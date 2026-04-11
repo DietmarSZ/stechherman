@@ -1,8 +1,21 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { Oswald, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/site";
+
+const headingFont = Oswald({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-heading",
+});
+
+const bodyFont = Source_Sans_3({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-body",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -39,7 +52,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={`${headingFont.variable} ${bodyFont.variable}`}>
         <div className="site-frame">
           <div className="utility-bar">
             <div className="utility-content">

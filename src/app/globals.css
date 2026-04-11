@@ -13,8 +13,8 @@
   --radius-lg: 28px;
   --radius-md: 20px;
   --radius-sm: 14px;
-  --sans: "Avenir Next", "Segoe UI", sans-serif;
-  --serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+  --sans: var(--font-body), "Helvetica Neue", "Segoe UI", sans-serif;
+  --heading: var(--font-heading), "Arial Narrow", sans-serif;
 }
 
 * {
@@ -204,21 +204,25 @@ h1,
 h2,
 h3 {
   margin: 0;
-  font-family: var(--serif);
-  line-height: 1.02;
+  font-family: var(--heading);
+  line-height: 1;
+  letter-spacing: 0.01em;
 }
 
 h1 {
   font-size: clamp(2.8rem, 5.6vw, 4.6rem);
-  max-width: 11ch;
+  max-width: 12ch;
+  text-transform: uppercase;
 }
 
 h2 {
   font-size: clamp(1.8rem, 3.5vw, 3rem);
+  text-transform: uppercase;
 }
 
 h3 {
   font-size: 1.45rem;
+  text-transform: uppercase;
 }
 
 p,
@@ -390,7 +394,7 @@ span {
 .offer-price {
   color: var(--accent-deep);
   font-size: 2rem;
-  font-family: var(--serif);
+  font-family: var(--heading);
   margin: 0.4rem 0 0.5rem;
 }
 
