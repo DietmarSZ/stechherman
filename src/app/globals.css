@@ -364,6 +364,33 @@ span {
   max-width: 70ch;
 }
 
+.specials-heading {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.specials-bar {
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  padding: 0 1.2rem;
+  background: var(--black-bar);
+  color: #ffffff;
+  border-radius: var(--radius-md);
+}
+
+.specials-bar span {
+  color: #ffffff;
+  font-family: var(--font-heading), "Helvetica Neue", "Arial Narrow", Arial, sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  line-height: 1;
+  font-weight: 700;
+}
+
+.specials-heading h2 {
+  max-width: 18ch;
+}
+
 .three-up,
 .service-grid,
 .faq-list,

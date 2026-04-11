@@ -189,9 +189,11 @@ export default function HomePage() {
       </section>
 
       <section className="section">
-        <div className="section-heading">
-          <p className="eyebrow">Current Specials</p>
-          <h2>We can preserve the offers section without carrying over expired dates.</h2>
+        <div className="specials-heading">
+          <div className="specials-bar">
+            <span>Current Specials</span>
+          </div>
+          <h2>Featured service offers available right now at Stech Auto Repair.</h2>
         </div>
         {activeOffers.length > 0 ? (
           <div className="offer-grid">
