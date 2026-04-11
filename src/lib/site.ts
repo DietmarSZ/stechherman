@@ -109,7 +109,7 @@ export const site = {
       price: "20% Off*",
       description: "A cleaner version of the current new-customer promotion, ready for updated terms and valid dates.",
       disclosure:
-        "*Offer not applicable to all vehicles or circumstances. See service advisor, parts counter or dealer representative for details. Valid until 04-30-2026",
+        "*Does not include windshields, or tires. See dealer for complete details. Some restrictions apply. Prices subject to change without notice. Percentage off not to exceed $200. Shop fees, environmental fees, core charges, taxes, and other federal, state or locally mandated fees are in addition to this offer. One discount per transaction. Mention offer at arrival. Not applicable to all vehicles. Offer expires 4/30/26",
     },
   ],
 };
