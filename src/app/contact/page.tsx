@@ -16,7 +16,9 @@ export default function ContactPage() {
     <main className="inner-page">
       <header className="inner-hero">
         <p className="eyebrow">Find Us</p>
-        <h1>We&apos;d love to hear from you. Contact us today and let&apos;s connect.</h1>
+        <h1 className="contact-hero-title">
+          We&apos;d love to hear from you. Contact us today and let&apos;s connect.
+        </h1>
         <p>
           {site.locationNote}
         </p>

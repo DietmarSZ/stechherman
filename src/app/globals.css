@@ -429,6 +429,10 @@ span {
   padding: 2.8rem;
 }
 
+.contact-hero-title {
+  max-width: 18ch;
+}
+
 .cta-banner {
   align-items: center;
   background: linear-gradient(135deg, rgba(255, 138, 51, 0.12), rgba(255, 255, 255, 1));
