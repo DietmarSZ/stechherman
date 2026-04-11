@@ -215,8 +215,7 @@ export default function HomePage() {
         ) : (
           <article className="offer-fallback-card">
             <p>
-              Sorry, last month&apos;s special expired, we&apos;re feverishly working on a new special
-              for {fallbackMonth}.
+              This special has ended. We&apos;re getting a new offer ready for {fallbackMonth}.
             </p>
             <Image
               src="/images/logo-square-white-text.png"
