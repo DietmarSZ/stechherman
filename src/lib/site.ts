@@ -102,7 +102,7 @@ export const site = {
       price: "$79.95*",
       description: "Includes tire rotation, a multi-point inspection, and a cleaner offer presentation we can keep updated.",
       disclosure:
-        "*Offer not applicable to all vehicles or circumstances. See service advisor, parts counter or dealer representative for details. Valid until 04-30-2026",
+        "*Shop fees, environmental fees, core charges, taxes, and other federal, state, or locally mandated fees are extra. Discount applied before fees/taxes. Limit 1 discount per transaction. Mention offer at arrival. Not applicable to all vehicles or circumstances. Offer expires 4/30/26",
     },
     {
       title: "Introductory Service Offer",
