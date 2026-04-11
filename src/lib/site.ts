@@ -3,6 +3,8 @@ export const site = {
   url: "https://stechautorepair.com",
   phone: "(408) 389-5005",
   phoneHref: "tel:+14083895005",
+  email: "service@stechautorepair.com",
+  emailHref: "mailto:service@stechautorepair.com",
   address: {
     streetAddress: "1011 E. El Camino Real",
     addressLocality: "Sunnyvale",
@@ -11,11 +13,13 @@ export const site = {
     addressCountry: "US",
   },
   hours: [
-    "Mon-Fri: 8:00 AM - 5:30 PM",
-    "Sat: By appointment",
-    "Sun: Closed",
+    "Monday to Friday: 8AM - 5PM",
   ],
   serviceArea: ["Sunnyvale", "Santa Clara", "Mountain View", "Cupertino", "San Jose"],
+  locationNote:
+    "We are conveniently located in the heart of Silicon Valley, between Lawrence Expressway and Wolfe Road on East El Camino Real in Sunnyvale. The driveway is just before Starbucks and just past Sunnyvale Volkswagen.",
+  directionsNote:
+    "If you enter the address into navigation, make sure you select East El Camino Real.",
   hero: {
     eyebrow: "Auto Repair In Sunnyvale, CA",
     title: "Quality service, great value, and fast repairs for Asian and domestic vehicles.",

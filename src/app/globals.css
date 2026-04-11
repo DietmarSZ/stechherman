@@ -348,7 +348,8 @@ span {
 .faq-list,
 .contact-grid,
 .split,
-.offer-grid {
+.offer-grid,
+.find-us-grid {
   display: grid;
   gap: 1rem;
 }
@@ -364,7 +365,8 @@ span {
 .faq-list,
 .offer-grid,
 .contact-grid,
-.split {
+.split,
+.find-us-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
@@ -447,6 +449,29 @@ span {
   border-top: 1px solid var(--line);
 }
 
+.map-panel {
+  padding: 0;
+  overflow: hidden;
+}
+
+.map-frame {
+  position: relative;
+  min-height: 420px;
+}
+
+.map-frame iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  border: 0;
+  display: block;
+}
+
+.info-block a {
+  color: var(--accent-deep);
+  font-weight: 700;
+}
+
 .footer-logo {
   display: block;
   width: auto;
@@ -463,6 +488,7 @@ span {
   .contact-grid,
   .split,
   .offer-grid,
+  .find-us-grid,
   .cta-banner {
     grid-template-columns: 1fr;
   }
