@@ -40,6 +40,12 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <div className="site-frame">
+          <div className="utility-bar">
+            <div className="utility-content">
+              <p>{site.address.streetAddress}, {site.address.addressLocality}, {site.address.addressRegion} {site.address.postalCode}</p>
+              <a href={site.phoneHref}>Call Us Now {site.phone}</a>
+            </div>
+          </div>
           <header className="site-header">
             <Link className="brand-mark" href="/">
               <span>Stech</span>

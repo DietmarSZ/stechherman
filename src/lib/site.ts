@@ -18,13 +18,19 @@ export const site = {
   serviceArea: ["Sunnyvale", "Santa Clara", "Mountain View", "Cupertino", "San Jose"],
   hero: {
     eyebrow: "Auto Repair In Sunnyvale, CA",
-    title: "Straightforward repairs, trusted maintenance, and smarter service content built for how people search now.",
+    title: "Quality service, great value, and fast repairs for Asian and domestic vehicles.",
     description:
-      "Stech Auto Repair helps Silicon Valley drivers keep Asian and domestic vehicles reliable with practical maintenance, diagnostics, smog support, brakes, tires, and repair guidance that is easy to understand before you book.",
+      "Stech Auto Repair serves Sunnyvale drivers with straightforward maintenance, smog support, diagnostics, brakes, tires, and general repair work. The rebuild keeps the familiar shop message while giving the business a stronger modern website.",
   },
   primaryCtas: [
     { label: "Call The Shop", href: "tel:+14083895005" },
     { label: "View Services", href: "/services" },
+  ],
+  heroPoints: [
+    "No appointment necessary",
+    "Professional staff",
+    "Modern service tools",
+    "ASE-certified technicians",
   ],
   services: [
     {
@@ -76,6 +82,18 @@ export const site = {
       question: "Why build the site around AEO as well as SEO?",
       answer:
         "Answer Engine Optimization helps the shop appear in AI-assisted search and rich results by using clearer service explanations, structured data, local entity signals, and concise answers to customer questions.",
+    },
+  ],
+  offers: [
+    {
+      title: "Synthetic Oil Change Plus",
+      price: "$79.95",
+      description: "Includes tire rotation, a multi-point inspection, and a cleaner offer presentation we can keep updated.",
+    },
+    {
+      title: "Introductory Service Offer",
+      price: "20% Off",
+      description: "A cleaner version of the current new-customer promotion, ready for updated terms and valid dates.",
     },
   ],
 };

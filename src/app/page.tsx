@@ -1,28 +1,21 @@
 import Link from "next/link";
 import { getBusinessSchema, getFaqSchema, site } from "@/lib/site";
 
-const signals = [
-  "ASE-certified technicians",
-  "Asian and domestic vehicle care",
-  "Smog, maintenance, repair, and tire support",
-  "Sunnyvale location near the heart of Silicon Valley",
-];
-
 const proofPoints = [
   {
-    title: "Clarity Before Approval",
+    title: "No Appointment Necessary",
     description:
-      "We are rebuilding the site to explain common repair paths in plain language, which makes it easier for drivers to understand what they are authorizing.",
+      "Drive-ins stay front and center, just like the current website, so customers know they can stop by without a complicated booking process.",
   },
   {
-    title: "Built For Modern Search",
+    title: "Professional Staff",
     description:
-      "Pages are written to answer the kinds of questions customers ask Google, Maps, and AI assistants before they choose a shop.",
+      "We are rebuilding the site around clarity, trust, and clean service explanations instead of thin generic content.",
   },
   {
-    title: "Designed To Convert",
+    title: "Modern Service Tools",
     description:
-      "Clear contact actions, service pathways, and local trust details help the right customers call, visit, or book faster.",
+      "The new structure gives Stech Auto Repair a modern web presence while still feeling like the same practical neighborhood shop.",
   },
 ];
 
@@ -52,39 +45,37 @@ export default function HomePage() {
                 {cta.label}
               </Link>
             ))}
+            <Link className="button button-secondary" href="/contact">
+              Find Us
+            </Link>
           </div>
           <ul className="signal-list">
-            {signals.map((signal) => (
+            {site.heroPoints.map((signal) => (
               <li key={signal}>{signal}</li>
             ))}
           </ul>
         </div>
 
         <aside className="hero-card">
-          <p className="card-label">Visit The Shop</p>
-          <h2>{site.name}</h2>
-          <p>
-            {site.address.streetAddress}
-            <br />
-            {site.address.addressLocality}, {site.address.addressRegion} {site.address.postalCode}
-          </p>
-          <a href={site.phoneHref}>{site.phone}</a>
-          <div className="hours">
-            {site.hours.map((line) => (
-              <span key={line}>{line}</span>
-            ))}
+          <div className="hero-photo-placeholder">
+            <p className="card-label">Shop Photo Area</p>
+            <h2>Original shop photos and logo will look great here.</h2>
+            <p>
+              Once you send the logo files and photos, this panel can become the main visual anchor of
+              the homepage while keeping the familiar orange brand feel.
+            </p>
           </div>
         </aside>
       </section>
 
       <section className="section">
         <div className="section-heading">
-          <p className="eyebrow">Why This Rebuild Matters</p>
-          <h2>A stronger local website should do more than look polished.</h2>
+          <p className="eyebrow">Located In The Heart Of Silicon Valley</p>
+          <h2>A better version of the current shop website, with the same message but stronger structure.</h2>
           <p>
-            The current site establishes the basics, but this rebuild is designed to answer customer
-            questions, strengthen local relevance, and create a cleaner path from search to booked
-            service.
+            The live site already says the right things: quality service, great prices, fast repairs,
+            and support for Asian and domestic brands. This version keeps that identity and gives it a
+            cleaner, more trustworthy presentation.
           </p>
         </div>
         <div className="three-up">
@@ -99,17 +90,18 @@ export default function HomePage() {
 
       <section className="section contrast">
         <div className="section-heading">
-          <p className="eyebrow">Service Paths</p>
-          <h2>Core repair categories with room to grow into dedicated landing pages.</h2>
+          <p className="eyebrow">Our Work</p>
+          <h2>Core services carried over from the current site and organized more clearly.</h2>
           <p>
-            We are starting with the service pillars already visible on the live site, then expanding
-            them into more searchable, more useful content for real customer intent.
+            We understand vehicle maintenance as well as mechanical failures. This section keeps the
+            current service categories, but packages them in a way that is easier for customers and
+            search engines to understand.
           </p>
         </div>
         <div className="service-grid">
           {site.services.map((service) => (
             <article key={service.slug} className="service-card">
-              <p className="service-kicker">/{service.slug}</p>
+              <p className="service-kicker">Service</p>
               <h3>{service.title}</h3>
               <p>{service.summary}</p>
               <ul>
@@ -124,21 +116,21 @@ export default function HomePage() {
 
       <section className="section split">
         <article className="panel panel-large">
-          <p className="eyebrow">Local Trust</p>
-          <h2>Built around the details people look for before they hand over their keys.</h2>
+          <p className="eyebrow">Shop Confidence</p>
+          <h2>Customers should immediately see what makes the shop easy to trust.</h2>
           <p>
-            This first version highlights your Sunnyvale location, the types of vehicles you service,
-            the practical benefits of your shop, and the value of having a site that clearly explains
-            maintenance, diagnostics, and repair work.
+            The current site mentions drive-ins, ASE-certified technicians, modern tools, and a
+            comfortable waiting room. Those are exactly the kinds of trust signals we can keep and
+            improve with real photos, updated details, and stronger content.
           </p>
         </article>
         <article className="panel panel-accent">
-          <p className="eyebrow">Next Content Layer</p>
-          <h2>What we can add as soon as your photos and shop details are ready.</h2>
+          <p className="eyebrow">What Comes Next</p>
+          <h2>As soon as you send images and logos, we can make this feel like the real brand.</h2>
           <ul className="check-list">
-            <li>Original photography galleries and shop atmosphere</li>
-            <li>Brand-specific service pages</li>
-            <li>Coupons and specials that stay current</li>
+            <li>Original photography galleries and exterior or interior shop shots</li>
+            <li>Primary and alternate logo lockups</li>
+            <li>Updated coupons and specials with current dates</li>
             <li>Reviews, FAQs, and neighborhood-specific location content</li>
           </ul>
         </article>
@@ -146,8 +138,25 @@ export default function HomePage() {
 
       <section className="section">
         <div className="section-heading">
+          <p className="eyebrow">Current Specials</p>
+          <h2>We can preserve the offers section without carrying over expired dates.</h2>
+        </div>
+        <div className="offer-grid">
+          {site.offers.map((offer) => (
+            <article key={offer.title} className="offer-card">
+              <p className="service-kicker">Offer</p>
+              <h3>{offer.title}</h3>
+              <p className="offer-price">{offer.price}</p>
+              <p>{offer.description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-heading">
           <p className="eyebrow">Common Questions</p>
-          <h2>Answer-friendly content that can support both AI search and traditional SEO.</h2>
+          <h2>Answer-friendly content that supports both AI search and practical customer questions.</h2>
         </div>
         <div className="faq-list">
           {site.faqs.map((faq) => (
@@ -159,14 +168,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section final-cta">
+      <section className="section final-cta cta-banner">
         <div>
-          <p className="eyebrow">Ready To Keep Building</p>
-          <h2>This is the foundation for the full custom Stech Auto Repair rebuild.</h2>
+          <p className="eyebrow">Drive In Or Call Now</p>
+          <h2>No appointment necessary. Book by phone today or stop by the shop.</h2>
         </div>
         <div className="cta-row">
-          <Link className="button button-primary" href="/services">
-            Explore Service Overview
+          <Link className="button button-primary" href={site.phoneHref}>
+            Call {site.phone}
           </Link>
           <Link className="button button-secondary" href="/contact">
             View Contact Details
