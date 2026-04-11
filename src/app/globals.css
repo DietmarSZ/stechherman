@@ -81,7 +81,9 @@ main {
 }
 
 .utility-tagline {
-  font-size: 0.9rem;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 .site-header,
