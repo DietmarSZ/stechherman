@@ -1,0 +1,51 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { site } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "Services",
+  description:
+    "Explore maintenance, smog support, diagnostics, general repair, and tire service categories for Stech Auto Repair in Sunnyvale.",
+  alternates: {
+    canonical: "/services",
+  },
+};
+
+export default function ServicesPage() {
+  return (
+    <main className="inner-page">
+      <header className="inner-hero">
+        <p className="eyebrow">Service Overview</p>
+        <h1>Repair categories we can expand into high-intent local landing pages.</h1>
+        <p>
+          This page gives the new site a stronger information architecture than the current build.
+          Each section can later become a standalone page with photos, FAQs, and service-specific
+          schema.
+        </p>
+        <div className="cta-row">
+          <Link className="button button-primary" href="/">
+            Back Home
+          </Link>
+          <Link className="button button-secondary" href="/contact">
+            Contact The Shop
+          </Link>
+        </div>
+      </header>
+
+      <section className="service-grid">
+        {site.services.map((service) => (
+          <article key={service.slug} className="service-card">
+            <p className="service-kicker">Service Focus</p>
+            <h2>{service.title}</h2>
+            <p>{service.summary}</p>
+            <ul>
+              {service.bullets.map((bullet) => (
+                <li key={bullet}>{bullet}</li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </section>
+    </main>
+  );
+}
