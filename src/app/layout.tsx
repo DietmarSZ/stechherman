@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Antonio, Roboto } from "next/font/google";
 import "./globals.css";
 import { PhoneAction } from "@/components/phone-action";
+import { SiteNav } from "@/components/site-nav";
 import { site } from "@/lib/site";
 
 const headingFont = Antonio({
@@ -76,12 +77,7 @@ export default function RootLayout({
                 priority
               />
             </Link>
-            <nav className="site-nav" aria-label="Primary">
-              <Link href="/">Home</Link>
-              <Link href="/about">About</Link>
-              <Link href="/services">Services</Link>
-              <Link href="/contact">Contact</Link>
-            </nav>
+            <SiteNav />
             <PhoneAction
               className="header-phone"
               label={site.phone}
