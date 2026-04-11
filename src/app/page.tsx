@@ -46,7 +46,9 @@ export default function HomePage() {
             sizes="(max-width: 960px) 100vw, 50vw"
           />
         </div>
-        <div className="hero-banner-fill" aria-hidden="true" />
+        <div className="hero-banner-fill">
+          <p>Professional Asian and domestic auto repair in Sunnyvale</p>
+        </div>
       </section>
 
       <div className="hero-divider" aria-hidden="true" />

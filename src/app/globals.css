@@ -153,6 +153,19 @@ main {
 
 .hero-banner-fill {
   background: var(--accent);
+  display: flex;
+  align-items: end;
+  padding: 2rem;
+}
+
+.hero-banner-fill p {
+  margin: 0;
+  max-width: 10ch;
+  color: #ffffff;
+  font-family: var(--font-heading), "Helvetica Neue", "Arial Narrow", Arial, sans-serif;
+  font-size: clamp(2rem, 4.3vw, 3.5rem);
+  line-height: 1.02;
+  font-weight: 700;
 }
 
 .hero-divider {
