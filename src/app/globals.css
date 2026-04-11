@@ -74,9 +74,14 @@ main {
 
 .utility-content p,
 .utility-content a,
+.utility-tagline,
 .utility-phone {
   margin: 0;
   color: #fff7f1;
+}
+
+.utility-tagline {
+  font-size: 0.9rem;
 }
 
 .site-header,

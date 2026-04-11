@@ -60,6 +60,7 @@ export default function RootLayout({
             <div className="utility-bar">
               <div className="utility-content">
                 <p>{site.address.streetAddress}, {site.address.addressLocality}, {site.address.addressRegion} {site.address.postalCode}</p>
+                <span className="utility-tagline">In the heart of the Silicon Valley.</span>
                 <PhoneAction
                   className="utility-phone"
                   label={`Call Us Now ${site.phone}`}
