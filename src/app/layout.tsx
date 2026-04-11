@@ -56,35 +56,37 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${headingFont.variable} ${bodyFont.variable}`}>
         <div className="site-frame">
-          <div className="utility-bar">
-            <div className="utility-content">
-              <p>{site.address.streetAddress}, {site.address.addressLocality}, {site.address.addressRegion} {site.address.postalCode}</p>
+          <div className="top-shell">
+            <div className="utility-bar">
+              <div className="utility-content">
+                <p>{site.address.streetAddress}, {site.address.addressLocality}, {site.address.addressRegion} {site.address.postalCode}</p>
+                <PhoneAction
+                  className="utility-phone"
+                  label={`Call Us Now ${site.phone}`}
+                  phone={site.phone}
+                  phoneHref={site.phoneHref}
+                />
+              </div>
+            </div>
+            <header className="site-header">
+              <Link className="brand-mark" href="/">
+                <Image
+                  src="/images/logo-square.png"
+                  alt="Stech Auto Repair logo"
+                  width={217}
+                  height={104}
+                  priority
+                />
+              </Link>
+              <SiteNav />
               <PhoneAction
-                className="utility-phone"
-                label={`Call Us Now ${site.phone}`}
+                className="header-phone"
+                label={site.phone}
                 phone={site.phone}
                 phoneHref={site.phoneHref}
               />
-            </div>
+            </header>
           </div>
-          <header className="site-header">
-            <Link className="brand-mark" href="/">
-              <Image
-                src="/images/logo-square.png"
-                alt="Stech Auto Repair logo"
-                width={217}
-                height={104}
-                priority
-              />
-            </Link>
-            <SiteNav />
-            <PhoneAction
-              className="header-phone"
-              label={site.phone}
-              phone={site.phone}
-              phoneHref={site.phoneHref}
-            />
-          </header>
 
           {children}
 
