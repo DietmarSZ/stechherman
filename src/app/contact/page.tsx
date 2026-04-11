@@ -83,7 +83,7 @@ export default function ContactPage() {
           </p>
         </article>
 
-        <article className="panel panel-accent">
+        <article className="panel">
           <p className="eyebrow">Need service help?</p>
           <h2>Drive in or reach out before your visit.</h2>
           <p>
