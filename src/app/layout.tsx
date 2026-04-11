@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Oswald, Source_Sans_3 } from "next/font/google";
+import { Open_Sans, Roboto_Condensed } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/site";
 
-const headingFont = Oswald({
+const headingFont = Roboto_Condensed({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-heading",
 });
 
-const bodyFont = Source_Sans_3({
+const bodyFont = Open_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-body",
