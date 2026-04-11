@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { PhoneAction } from "@/components/phone-action";
-import { getBusinessSchema, getFaqSchema, site } from "@/lib/site";
+import { getBusinessSchema, getCurrentOffers, getFaqSchema, getOfferFallbackMonth, site } from "@/lib/site";
+
+export const revalidate = 3600;
 
 const proofPoints = [
   {
@@ -24,6 +26,8 @@ const proofPoints = [
 export default function HomePage() {
   const businessSchema = getBusinessSchema();
   const faqSchema = getFaqSchema();
+  const activeOffers = getCurrentOffers();
+  const fallbackMonth = getOfferFallbackMonth();
 
   return (
     <main className="page-shell">
@@ -189,24 +193,40 @@ export default function HomePage() {
           <p className="eyebrow">Current Specials</p>
           <h2>We can preserve the offers section without carrying over expired dates.</h2>
         </div>
-        <div className="offer-grid">
-          {site.offers.map((offer) => (
-            <article key={offer.title} className="offer-card">
-              <Image
-                src="/images/logo-square.png"
-                alt="Stech Auto Repair logo"
-                width={74}
-                height={36}
-                className="offer-logo"
-              />
-              <p className="service-kicker">Offer</p>
-              <h3>{offer.title}</h3>
-              <p className="offer-price">{offer.price}</p>
-              <p>{offer.description}</p>
-              <p className="offer-disclosure">{offer.disclosure}</p>
-            </article>
-          ))}
-        </div>
+        {activeOffers.length > 0 ? (
+          <div className="offer-grid">
+            {activeOffers.map((offer) => (
+              <article key={offer.title} className="offer-card">
+                <Image
+                  src="/images/logo-square.png"
+                  alt="Stech Auto Repair logo"
+                  width={74}
+                  height={36}
+                  className="offer-logo"
+                />
+                <p className="service-kicker">Offer</p>
+                <h3>{offer.title}</h3>
+                <p className="offer-price">{offer.price}</p>
+                <p>{offer.description}</p>
+                <p className="offer-disclosure">{offer.disclosure}</p>
+              </article>
+            ))}
+          </div>
+        ) : (
+          <article className="offer-fallback-card">
+            <p>
+              Sorry, last month&apos;s special expired, we&apos;re feverishly working on a new special
+              for {fallbackMonth}.
+            </p>
+            <Image
+              src="/images/logo-square-white-text.png"
+              alt="Stech Auto Repair logo"
+              width={188}
+              height={97}
+              className="offer-fallback-logo"
+            />
+          </article>
+        )}
       </section>
 
       <section className="section">

@@ -1,3 +1,11 @@
+type Offer = {
+  title: string;
+  price: string;
+  description: string;
+  disclosure: string;
+  expiresOn: string;
+};
+
 export const site = {
   name: "Stech Auto Repair",
   url: "https://stechautorepair.com",
@@ -103,6 +111,7 @@ export const site = {
       description: "Includes tire rotation, a multi-point inspection, and a cleaner offer presentation we can keep updated.",
       disclosure:
         "*Shop fees, environmental fees, core charges, taxes, and other federal, state, or locally mandated fees are extra. Discount applied before fees/taxes. Limit 1 discount per transaction. Mention offer at arrival. Not applicable to all vehicles or circumstances. Offer expires 4/30/26",
+      expiresOn: "2026-04-30",
     },
     {
       title: "Introductory Service Offer",
@@ -110,9 +119,32 @@ export const site = {
       description: "A cleaner version of the current new-customer promotion, ready for updated terms and valid dates.",
       disclosure:
         "*Does not include windshields, or tires. See dealer for complete details. Some restrictions apply. Prices subject to change without notice. Percentage off not to exceed $200. Shop fees, environmental fees, core charges, taxes, and other federal, state or locally mandated fees are in addition to this offer. One discount per transaction. Mention offer at arrival. Not applicable to all vehicles. Offer expires 4/30/26",
+      expiresOn: "2026-04-30",
     },
-  ],
+  ] satisfies Offer[],
 };
+
+function parseDateOnly(value: string) {
+  return new Date(`${value}T00:00:00`);
+}
+
+function isOfferActive(offer: Offer, today = new Date()) {
+  const expiry = parseDateOnly(offer.expiresOn);
+  expiry.setHours(23, 59, 59, 999);
+  return today <= expiry;
+}
+
+export function getCurrentOffers(today = new Date()) {
+  return site.offers.filter((offer) => isOfferActive(offer, today));
+}
+
+export function getOfferFallbackMonth(today = new Date()) {
+  const futureDates = site.offers.map((offer) => parseDateOnly(offer.expiresOn));
+  const latestExpiry = futureDates.sort((a, b) => b.getTime() - a.getTime())[0] ?? today;
+  const monthSource = today > latestExpiry ? today : new Date(latestExpiry.getFullYear(), latestExpiry.getMonth() + 1, 1);
+
+  return monthSource.toLocaleString("en-US", { month: "long" });
+}
 
 export function getBusinessSchema() {
   return {

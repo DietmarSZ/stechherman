@@ -458,6 +458,32 @@ span {
   color: var(--muted);
 }
 
+.offer-fallback-card {
+  position: relative;
+  min-height: 360px;
+  border-radius: var(--radius-lg);
+  background: var(--accent);
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.offer-fallback-card p {
+  max-width: 17ch;
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  line-height: 1.22;
+  font-weight: 400;
+}
+
+.offer-fallback-logo {
+  position: absolute;
+  right: 1.8rem;
+  bottom: 1.6rem;
+  width: auto;
+  height: 78px;
+}
+
 .faq-item h3,
 .service-card h3,
 .service-card h2,
@@ -634,5 +660,16 @@ span {
 
   .cta-row {
     flex-direction: column;
+  }
+
+  .offer-fallback-card {
+    min-height: 300px;
+    padding: 1.4rem;
+  }
+
+  .offer-fallback-logo {
+    right: 1.2rem;
+    bottom: 1.2rem;
+    height: 60px;
   }
 }
