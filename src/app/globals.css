@@ -388,7 +388,9 @@ span {
 }
 
 .specials-heading h2 {
-  max-width: 18ch;
+  max-width: 28ch;
+  font-size: clamp(2.1rem, 3.2vw, 3rem);
+  line-height: 0.98;
 }
 
 .three-up,
