@@ -35,8 +35,24 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <section className="hero">
-        <div className="hero-copy">
+      <section className="hero-banner">
+        <div className="hero-banner-image">
+          <Image
+            src="/images/service-wheel.jpg"
+            alt="Technician working on a wheel and tire assembly in the repair bay"
+            fill
+            priority
+            className="banner-image"
+            sizes="(max-width: 960px) 100vw, 50vw"
+          />
+        </div>
+        <div className="hero-banner-fill" aria-hidden="true" />
+      </section>
+
+      <div className="hero-divider" aria-hidden="true" />
+
+      <section className="intro-grid">
+        <article className="hero-copy intro-primary">
           <p className="eyebrow">{site.hero.eyebrow}</p>
           <h1>{site.hero.title}</h1>
           <p className="lede">{site.hero.description}</p>
@@ -50,31 +66,18 @@ export default function HomePage() {
               Find Us
             </Link>
           </div>
-          <ul className="signal-list">
-            {site.heroPoints.map((signal) => (
-              <li key={signal}>{signal}</li>
-            ))}
-          </ul>
-        </div>
+        </article>
 
-        <aside className="hero-card">
-          <Image
-            src="/images/hero-undercarriage.jpg"
-            alt="Vehicle on a lift inside Stech Auto Repair"
-            fill
-            priority
-            className="hero-image"
-            sizes="(max-width: 960px) 100vw, 40vw"
-          />
-          <div className="hero-photo-placeholder">
+        <aside className="intro-side">
+          <article className="panel info-block">
             <Image
               src="/images/logo-round.png"
               alt="Round Stech Auto Repair logo"
-              width={92}
-              height={91}
-              className="hero-badge"
+              width={74}
+              height={73}
+              className="info-badge"
             />
-            <p className="card-label">Visit The Shop</p>
+            <p className="card-label">Visit the shop</p>
             <h2>{site.name}</h2>
             <p>
               {site.address.streetAddress}
@@ -82,7 +85,16 @@ export default function HomePage() {
               {site.address.addressLocality}, {site.address.addressRegion} {site.address.postalCode}
             </p>
             <a href={site.phoneHref}>{site.phone}</a>
-          </div>
+          </article>
+
+          <article className="panel signal-panel">
+            <p className="card-label">Why drivers choose Stech</p>
+            <ul className="signal-list">
+              {site.heroPoints.map((signal) => (
+                <li key={signal}>{signal}</li>
+              ))}
+            </ul>
+          </article>
         </aside>
       </section>
 
