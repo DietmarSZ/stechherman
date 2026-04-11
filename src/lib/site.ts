@@ -99,15 +99,17 @@ export const site = {
   offers: [
     {
       title: "Synthetic Oil Change Plus",
-      price: "$79.95",
+      price: "$79.95*",
       description: "Includes tire rotation, a multi-point inspection, and a cleaner offer presentation we can keep updated.",
     },
     {
       title: "Introductory Service Offer",
-      price: "20% Off",
+      price: "20% Off*",
       description: "A cleaner version of the current new-customer promotion, ready for updated terms and valid dates.",
     },
   ],
+  offerDisclosure:
+    "*Offer not applicable to all vehicles or circumstances. See service advisor, parts counter or dealer representative for details. Valid until 04-30-2026",
 };
 
 export function getBusinessSchema() {

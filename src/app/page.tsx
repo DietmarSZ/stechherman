@@ -192,6 +192,7 @@ export default function HomePage() {
             </article>
           ))}
         </div>
+        <p className="offer-disclosure">{site.offerDisclosure}</p>
       </section>
 
       <section className="section">
