@@ -52,7 +52,7 @@ export default function HomePage() {
           />
         </div>
         <div className="hero-banner-fill">
-          <p>Professional Asian and domestic auto repair in Sunnyvale</p>
+          <p>Professional Asian and domestic auto repair at a great price</p>
         </div>
       </section>
 
