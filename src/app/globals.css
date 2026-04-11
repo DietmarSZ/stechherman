@@ -80,8 +80,13 @@ main {
 }
 
 .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
   padding: 1.25rem 0;
+  background: rgba(255, 255, 255, 0.96);
   border-bottom: 1px solid rgba(34, 32, 28, 0.06);
+  backdrop-filter: blur(10px);
 }
 
 .brand-mark {
