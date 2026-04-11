@@ -52,7 +52,10 @@ export default function HomePage() {
           />
         </div>
         <div className="hero-banner-fill">
-          <p>Professional Asian and domestic auto repair at a great price</p>
+          <p>
+            S-Tech Auto Repair, offers inexpensive, efficient maintenance and repair services for
+            your Asian or domestic make automobiles.
+          </p>
         </div>
       </section>
 
