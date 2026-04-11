@@ -430,7 +430,9 @@ span {
 }
 
 .contact-hero-title {
-  max-width: 18ch;
+  max-width: 26ch;
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  line-height: 1;
 }
 
 .cta-banner {
