@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { site } from "@/lib/site";
@@ -35,6 +36,15 @@ export default function ServicesPage() {
       <section className="service-grid">
         {site.services.map((service) => (
           <article key={service.slug} className="service-card">
+            <div className="service-media">
+              <Image
+                src={service.image}
+                alt={service.alt}
+                fill
+                className="service-image"
+                sizes="(max-width: 960px) 100vw, 50vw"
+              />
+            </div>
             <p className="service-kicker">Service Focus</p>
             <h2>{service.title}</h2>
             <p>{service.summary}</p>

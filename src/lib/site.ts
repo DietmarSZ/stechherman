@@ -39,6 +39,8 @@ export const site = {
       summary:
         "Oil changes, fluid checks, filters, inspections, and mileage-based maintenance to keep your vehicle on schedule.",
       bullets: ["Routine maintenance", "Synthetic oil service", "Battery and belt checks"],
+      image: "/images/service-battery.jpg",
+      alt: "Technician checking under-hood components during scheduled maintenance.",
     },
     {
       slug: "smog-check",
@@ -46,6 +48,8 @@ export const site = {
       summary:
         "Guidance around failed inspections, emissions issues, and repair planning so you know the next step quickly.",
       bullets: ["Pre-test evaluation", "Emissions diagnosis", "Repair recommendations"],
+      image: "/images/service-exhaust.jpg",
+      alt: "Detailed undercar exhaust and emissions system view inside the shop.",
     },
     {
       slug: "diagnostics-repair",
@@ -53,6 +57,8 @@ export const site = {
       summary:
         "Brake work, engine concerns, electrical issues, drivability complaints, and practical repair plans you can approve with confidence.",
       bullets: ["Check engine light", "Brake and suspension repair", "Electrical troubleshooting"],
+      image: "/images/service-diagnostic.jpg",
+      alt: "Technician using a diagnostic tablet while inspecting an engine bay.",
     },
     {
       slug: "tires-alignment",
@@ -60,6 +66,8 @@ export const site = {
       summary:
         "Access to popular tire brands plus alignment support that protects ride quality, tire life, and safe handling.",
       bullets: ["New tires", "Rotation and balancing", "Alignment inspections"],
+      image: "/images/service-wheel.jpg",
+      alt: "Technician working on a wheel and tire assembly in the repair bay.",
     },
   ],
   faqs: [

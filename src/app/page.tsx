@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { getBusinessSchema, getFaqSchema, site } from "@/lib/site";
 
@@ -57,13 +58,30 @@ export default function HomePage() {
         </div>
 
         <aside className="hero-card">
+          <Image
+            src="/images/hero-undercarriage.jpg"
+            alt="Vehicle on a lift inside Stech Auto Repair"
+            fill
+            priority
+            className="hero-image"
+            sizes="(max-width: 960px) 100vw, 40vw"
+          />
           <div className="hero-photo-placeholder">
-            <p className="card-label">Shop Photo Area</p>
-            <h2>Original shop photos and logo will look great here.</h2>
+            <Image
+              src="/images/logo-round.png"
+              alt="Round Stech Auto Repair logo"
+              width={92}
+              height={91}
+              className="hero-badge"
+            />
+            <p className="card-label">Visit The Shop</p>
+            <h2>{site.name}</h2>
             <p>
-              Once you send the logo files and photos, this panel can become the main visual anchor of
-              the homepage while keeping the familiar orange brand feel.
+              {site.address.streetAddress}
+              <br />
+              {site.address.addressLocality}, {site.address.addressRegion} {site.address.postalCode}
             </p>
+            <a href={site.phoneHref}>{site.phone}</a>
           </div>
         </aside>
       </section>
@@ -101,6 +119,15 @@ export default function HomePage() {
         <div className="service-grid">
           {site.services.map((service) => (
             <article key={service.slug} className="service-card">
+              <div className="service-media">
+                <Image
+                  src={service.image}
+                  alt={service.alt}
+                  fill
+                  className="service-image"
+                  sizes="(max-width: 960px) 100vw, 50vw"
+                />
+              </div>
               <p className="service-kicker">Service</p>
               <h3>{service.title}</h3>
               <p>{service.summary}</p>
@@ -128,8 +155,8 @@ export default function HomePage() {
           <p className="eyebrow">What Comes Next</p>
           <h2>As soon as you send images and logos, we can make this feel like the real brand.</h2>
           <ul className="check-list">
-            <li>Original photography galleries and exterior or interior shop shots</li>
-            <li>Primary and alternate logo lockups</li>
+            <li>More original photography galleries and exterior or interior shop shots</li>
+            <li>Additional logo lockups if you have them</li>
             <li>Updated coupons and specials with current dates</li>
             <li>Reviews, FAQs, and neighborhood-specific location content</li>
           </ul>

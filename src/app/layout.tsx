@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import "./globals.css";
 import { site } from "@/lib/site";
@@ -48,8 +49,13 @@ export default function RootLayout({
           </div>
           <header className="site-header">
             <Link className="brand-mark" href="/">
-              <span>Stech</span>
-              <span>Auto Repair</span>
+              <Image
+                src="/images/logo-square.png"
+                alt="Stech Auto Repair logo"
+                width={217}
+                height={104}
+                priority
+              />
             </Link>
             <nav className="site-nav" aria-label="Primary">
               <Link href="/">Home</Link>
@@ -66,7 +72,13 @@ export default function RootLayout({
 
           <footer className="site-footer">
             <div>
-              <p className="eyebrow">Stech Auto Repair</p>
+              <Image
+                src="/images/logo-square.png"
+                alt="Stech Auto Repair logo"
+                width={170}
+                height={82}
+                className="footer-logo"
+              />
               <p>
                 {site.address.streetAddress}, {site.address.addressLocality}, {site.address.addressRegion}{" "}
                 {site.address.postalCode}

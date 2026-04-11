@@ -86,12 +86,12 @@ main {
 
 .brand-mark {
   display: inline-flex;
-  flex-direction: column;
-  gap: 0.1rem;
-  font-family: var(--serif);
-  font-size: 1.3rem;
-  line-height: 0.95;
-  color: var(--accent-deep);
+  align-items: center;
+}
+
+.brand-mark img {
+  width: auto;
+  height: 64px;
 }
 
 .site-nav,
@@ -149,6 +149,7 @@ main {
 }
 
 .hero-card {
+  position: relative;
   overflow: hidden;
   background:
     linear-gradient(180deg, rgba(222, 106, 31, 0.12), rgba(52, 62, 72, 0.95)),
@@ -157,15 +158,31 @@ main {
   min-height: 520px;
 }
 
+.hero-image {
+  object-fit: cover;
+}
+
 .hero-photo-placeholder {
+  position: relative;
+  z-index: 1;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: end;
   padding: 2.2rem;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(0, 0, 0, 0.28)),
-    linear-gradient(135deg, rgba(222, 106, 31, 0.55), rgba(52, 62, 72, 0.2));
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(0, 0, 0, 0.58)),
+    linear-gradient(135deg, rgba(222, 106, 31, 0.24), rgba(52, 62, 72, 0.12));
+}
+
+.hero-badge {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  width: 78px;
+  height: auto;
+  border-radius: 999px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
 }
 
 .eyebrow,
@@ -337,6 +354,31 @@ span {
   padding: 2rem;
 }
 
+.service-card {
+  overflow: hidden;
+  padding: 0 0 2rem;
+}
+
+.service-card > .service-kicker,
+.service-card > h2,
+.service-card > h3,
+.service-card > p,
+.service-card > ul {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.service-media {
+  position: relative;
+  height: 220px;
+  margin-bottom: 1.35rem;
+  overflow: hidden;
+}
+
+.service-image {
+  object-fit: cover;
+}
+
 .contrast .service-card,
 .panel-accent,
 .offer-card {
@@ -379,6 +421,13 @@ span {
   padding-top: 1rem;
   padding-bottom: 1rem;
   border-top: 1px solid var(--line);
+}
+
+.footer-logo {
+  display: block;
+  width: auto;
+  height: 54px;
+  margin-bottom: 0.5rem;
 }
 
 @media (max-width: 960px) {
@@ -434,6 +483,10 @@ span {
 
   h2 {
     font-size: clamp(1.7rem, 8vw, 2.4rem);
+  }
+
+  .brand-mark img {
+    height: 54px;
   }
 
   .button {
