@@ -189,10 +189,10 @@ export default function HomePage() {
               <h3>{offer.title}</h3>
               <p className="offer-price">{offer.price}</p>
               <p>{offer.description}</p>
+              <p className="offer-disclosure">{offer.disclosure}</p>
             </article>
           ))}
         </div>
-        <p className="offer-disclosure">{site.offerDisclosure}</p>
       </section>
 
       <section className="section">
