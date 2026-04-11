@@ -17,7 +17,11 @@ export default function ServicesPage() {
     <main className="inner-page">
       <header className="inner-hero">
         <p className="eyebrow">Service Overview</p>
-        <h1>Repair categories we can expand into high-intent local landing pages.</h1>
+        <h1 className="services-hero-title">
+          Repair categories we can expand
+          <br />
+          into high-intent local landing pages.
+        </h1>
         <p>
           This page gives the new site a stronger information architecture than the current build.
           Each section can later become a standalone page with photos, FAQs, and service-specific
