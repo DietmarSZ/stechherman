@@ -5,9 +5,9 @@
   --ink: #22201c;
   --muted: #5f5750;
   --line: rgba(34, 32, 28, 0.1);
-  --accent: #ff8a33;
-  --accent-deep: #dd6a14;
-  --accent-soft: #fff1e5;
+  --accent: rgb(246, 141, 63);
+  --accent-deep: #d86f1f;
+  --accent-soft: #fff1e7;
   --slate: #343e48;
   --black-bar: #080808;
   --shadow: 0 16px 40px rgba(72, 43, 16, 0.08);
