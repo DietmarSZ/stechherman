@@ -204,14 +204,14 @@ main {
 }
 
 .hero-banner {
-  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.95fr);
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
   gap: 1.3rem;
   align-items: stretch;
 }
 
 .hero-banner-image,
 .hero-banner-fill {
-  min-height: 320px;
+  min-height: 280px;
   border-radius: var(--radius-md);
   overflow: hidden;
 }
@@ -229,16 +229,16 @@ main {
   background: var(--accent);
   display: flex;
   align-items: end;
-  padding: 2rem;
+  padding: 1.75rem 2rem;
 }
 
 .hero-banner-fill p {
   margin: 0;
-  max-width: 10ch;
+  max-width: 19ch;
   color: #ffffff;
   font-family: var(--font-heading), "Helvetica Neue", "Arial Narrow", Arial, sans-serif;
-  font-size: clamp(2rem, 4.3vw, 3.5rem);
-  line-height: 1.02;
+  font-size: clamp(1.5rem, 2.7vw, 2.5rem);
+  line-height: 1.08;
   font-weight: 700;
 }
 
