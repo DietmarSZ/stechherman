@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Open_Sans, Roboto_Condensed } from "next/font/google";
+import { Antonio, Roboto } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/site";
 
-const headingFont = Roboto_Condensed({
+const headingFont = Antonio({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-heading",
 });
 
-const bodyFont = Open_Sans({
+const bodyFont = Roboto({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "700"],
   variable: "--font-body",
 });
 
