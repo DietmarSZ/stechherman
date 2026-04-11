@@ -418,6 +418,18 @@ span {
   margin: 0.4rem 0 0.5rem;
 }
 
+.offer-card {
+  position: relative;
+}
+
+.offer-logo {
+  position: absolute;
+  top: 1.15rem;
+  right: 1.15rem;
+  width: auto;
+  height: 32px;
+}
+
 .offer-disclosure {
   margin: -0.15rem 0 0;
   font-size: 0.78rem;

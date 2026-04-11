@@ -185,6 +185,13 @@ export default function HomePage() {
         <div className="offer-grid">
           {site.offers.map((offer) => (
             <article key={offer.title} className="offer-card">
+              <Image
+                src="/images/logo-square.png"
+                alt="Stech Auto Repair logo"
+                width={74}
+                height={36}
+                className="offer-logo"
+              />
               <p className="service-kicker">Offer</p>
               <h3>{offer.title}</h3>
               <p className="offer-price">{offer.price}</p>
