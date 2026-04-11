@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { PhoneAction } from "@/components/phone-action";
 import { getBusinessSchema, getFaqSchema, site } from "@/lib/site";
 
 const proofPoints = [
@@ -59,11 +60,12 @@ export default function HomePage() {
           <h1>{site.hero.title}</h1>
           <p className="lede">{site.hero.description}</p>
           <div className="cta-row">
-            {site.primaryCtas.map((cta) => (
-              <Link key={cta.href} className="button button-primary" href={cta.href}>
-                {cta.label}
-              </Link>
-            ))}
+            <PhoneAction
+              className="button button-primary"
+              label="Call The Shop"
+              phone={site.phone}
+              phoneHref={site.phoneHref}
+            />
             <Link className="button button-secondary" href="/contact">
               Find Us
             </Link>
@@ -86,7 +88,12 @@ export default function HomePage() {
               <br />
               {site.address.addressLocality}, {site.address.addressRegion} {site.address.postalCode}
             </p>
-            <a href={site.phoneHref}>{site.phone}</a>
+            <PhoneAction
+              className="inline-phone-link"
+              label={site.phone}
+              phone={site.phone}
+              phoneHref={site.phoneHref}
+            />
           </article>
 
           <article className="panel signal-panel">
@@ -223,9 +230,12 @@ export default function HomePage() {
           <h2>No appointment necessary. Book by phone today or stop by the shop.</h2>
         </div>
         <div className="cta-row">
-          <Link className="button button-primary" href={site.phoneHref}>
-            Call {site.phone}
-          </Link>
+          <PhoneAction
+            className="button button-primary"
+            label={`Call ${site.phone}`}
+            phone={site.phone}
+            phoneHref={site.phoneHref}
+          />
           <Link className="button button-secondary" href="/contact">
             View Contact Details
           </Link>

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Antonio, Roboto } from "next/font/google";
 import "./globals.css";
+import { PhoneAction } from "@/components/phone-action";
 import { site } from "@/lib/site";
 
 const headingFont = Antonio({
@@ -57,7 +58,12 @@ export default function RootLayout({
           <div className="utility-bar">
             <div className="utility-content">
               <p>{site.address.streetAddress}, {site.address.addressLocality}, {site.address.addressRegion} {site.address.postalCode}</p>
-              <a href={site.phoneHref}>Call Us Now {site.phone}</a>
+              <PhoneAction
+                className="utility-phone"
+                label={`Call Us Now ${site.phone}`}
+                phone={site.phone}
+                phoneHref={site.phoneHref}
+              />
             </div>
           </div>
           <header className="site-header">
@@ -76,9 +82,12 @@ export default function RootLayout({
               <Link href="/services">Services</Link>
               <Link href="/contact">Contact</Link>
             </nav>
-            <a className="header-phone" href={site.phoneHref}>
-              {site.phone}
-            </a>
+            <PhoneAction
+              className="header-phone"
+              label={site.phone}
+              phone={site.phone}
+              phoneHref={site.phoneHref}
+            />
           </header>
 
           {children}
@@ -103,7 +112,12 @@ export default function RootLayout({
               <Link href="/contact">Contact</Link>
             </div>
             <div>
-              <a href={site.phoneHref}>{site.phone}</a>
+              <PhoneAction
+                className="footer-phone"
+                label={site.phone}
+                phone={site.phone}
+                phoneHref={site.phoneHref}
+              />
             </div>
           </footer>
         </div>

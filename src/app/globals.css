@@ -65,7 +65,8 @@ main {
 }
 
 .utility-content p,
-.utility-content a {
+.utility-content a,
+.utility-phone {
   margin: 0;
   color: #fff7f1;
 }
@@ -102,14 +103,34 @@ main {
 
 .site-nav a,
 .footer-links a,
-.header-phone {
+.header-phone,
+.footer-phone {
   color: var(--muted);
   font-size: 0.98rem;
   font-weight: 600;
 }
 
-.header-phone {
+.header-phone,
+.footer-phone {
   color: var(--accent-deep);
+}
+
+.utility-phone,
+.header-phone,
+.footer-phone,
+.inline-phone-link {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+  text-align: inherit;
+}
+
+.inline-phone-link {
+  color: var(--accent-deep);
+  font-weight: 700;
 }
 
 main {
@@ -508,6 +529,43 @@ span {
   width: auto;
   height: 54px;
   margin-bottom: 0.5rem;
+}
+
+.phone-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(8, 8, 8, 0.5);
+}
+
+.phone-modal {
+  width: min(100%, 460px);
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+  padding: 1.5rem;
+}
+
+.phone-modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.2rem;
+}
+
+.phone-modal-close {
+  margin-top: 0.9rem;
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
 }
 
 @media (max-width: 960px) {

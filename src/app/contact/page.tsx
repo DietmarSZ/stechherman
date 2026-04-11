@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PhoneAction } from "@/components/phone-action";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -25,9 +26,12 @@ export default function ContactPage() {
           {site.locationNote}
         </p>
         <div className="cta-row">
-          <Link className="button button-primary" href={site.phoneHref}>
-            Call {site.phone}
-          </Link>
+          <PhoneAction
+            className="button button-primary"
+            label={`Call ${site.phone}`}
+            phone={site.phone}
+            phoneHref={site.phoneHref}
+          />
           <Link className="button button-secondary" href={site.emailHref}>
             Email the shop
           </Link>
@@ -51,7 +55,14 @@ export default function ContactPage() {
           <h2>Contact Us</h2>
           <p>{site.locationNote}</p>
           <p>
-            Call us at <a href={site.phoneHref}>{site.phone}</a> or email{" "}
+            Call us at{" "}
+            <PhoneAction
+              className="inline-phone-link"
+              label={site.phone}
+              phone={site.phone}
+              phoneHref={site.phoneHref}
+            />{" "}
+            or email{" "}
             <a href={site.emailHref}>{site.email}</a>.
           </p>
         </article>
@@ -93,9 +104,12 @@ export default function ContactPage() {
             gives customers the core information they need to find the shop and get in touch quickly.
           </p>
           <div className="cta-row">
-            <Link className="button button-primary" href={site.phoneHref}>
-              Call now
-            </Link>
+            <PhoneAction
+              className="button button-primary"
+              label="Call now"
+              phone={site.phone}
+              phoneHref={site.phoneHref}
+            />
             <Link className="button button-secondary" href="/services">
               See services
             </Link>
