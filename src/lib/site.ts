@@ -118,16 +118,16 @@ export const site = {
       price: "$79.95*",
       description: "Includes tire rotation, a multi-point inspection, and a cleaner offer presentation we can keep updated.",
       disclosure:
-        "*Shop fees, environmental fees, core charges, taxes, and other federal, state, or locally mandated fees are extra. Discount applied before fees/taxes. Limit 1 discount per transaction. Mention offer at arrival. Not applicable to all vehicles or circumstances. Offer expires 4/11/26",
-      expiresOn: "2026-04-11",
+        "*Shop fees, environmental fees, core charges, taxes, and other federal, state, or locally mandated fees are extra. Discount applied before fees/taxes. Limit 1 discount per transaction. Mention offer at arrival. Not applicable to all vehicles or circumstances. Offer expires 4/30/26",
+      expiresOn: "2026-04-30",
     },
     {
       title: "Introductory Service Offer",
       price: "20% Off*",
       description: "A cleaner version of the current new-customer promotion, ready for updated terms and valid dates.",
       disclosure:
-        "*Does not include windshields, or tires. See dealer for complete details. Some restrictions apply. Prices subject to change without notice. Percentage off not to exceed $200. Shop fees, environmental fees, core charges, taxes, and other federal, state or locally mandated fees are in addition to this offer. One discount per transaction. Mention offer at arrival. Not applicable to all vehicles. Offer expires 4/11/26",
-      expiresOn: "2026-04-11",
+        "*Does not include windshields, or tires. See dealer for complete details. Some restrictions apply. Prices subject to change without notice. Percentage off not to exceed $200. Shop fees, environmental fees, core charges, taxes, and other federal, state or locally mandated fees are in addition to this offer. One discount per transaction. Mention offer at arrival. Not applicable to all vehicles. Offer expires 4/30/26",
+      expiresOn: "2026-04-30",
     },
   ] satisfies Offer[],
 };
