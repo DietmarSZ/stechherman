@@ -63,7 +63,7 @@ export const site = {
       title: "Smog Check And Repair Support",
       summary:
         "Guidance around failed inspections, emissions issues, and repair planning so you know the next step quickly.",
-      bullets: ["Pre-test evaluation", "Emissions diagnosis", "Repair recommendations"],
+      bullets: ["Pre-test evaluation", "Emissions diagnosis", "Repair recommendations", "We are not a STAR station"],
       image: "/images/service-exhaust.jpg",
       alt: "Detailed undercar exhaust and emissions system view inside the shop.",
     },
