@@ -136,13 +136,18 @@ export default function ContactPage() {
 
       <section className="contact-grid">
         <article className="panel">
-          <p className="eyebrow">Working Hours</p>
+          <p className="eyebrow">Working Hours And Night Drop</p>
           <h2>Monday to Friday</h2>
           <div className="hours">
             {site.hours.map((line) => (
               <span key={line}>{line}</span>
             ))}
           </div>
+          <p>
+            Need to leave your car while we&apos;re closed? No problem. Drop it off in the service
+            lane at Sunnyvale Volkswagen, fill out the convenient night-drop form, and leave your
+            key in the secure night-drop box.
+          </p>
         </article>
 
         <article className="panel">
