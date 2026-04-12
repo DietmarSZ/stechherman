@@ -49,7 +49,7 @@ export default function ServicesPage() {
                 sizes="(max-width: 960px) 100vw, 50vw"
               />
             </div>
-            <p className="service-kicker">Service Focus</p>
+            <p className="service-kicker">{service.kicker}</p>
             <h2>{service.title}</h2>
             <p>{service.summary}</p>
             <ul>

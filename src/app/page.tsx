@@ -105,7 +105,7 @@ export default function HomePage() {
                   sizes="(max-width: 960px) 100vw, 50vw"
                 />
               </div>
-              <p className="service-kicker">Service</p>
+              <p className="service-kicker">{service.kicker}</p>
               <h3>{service.title}</h3>
               <p>{service.summary}</p>
               <ul>

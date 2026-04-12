@@ -51,6 +51,7 @@ export const site = {
   services: [
     {
       slug: "maintenance",
+      kicker: "Service",
       title: "Factory-Scheduled Maintenance",
       summary:
         "Oil changes, fluid checks, filters, inspections, and mileage-based maintenance to keep your vehicle on schedule.",
@@ -60,6 +61,7 @@ export const site = {
     },
     {
       slug: "smog-check",
+      kicker: "Smog Certificate",
       title: "Smog Check And Repair Support",
       summary:
         "Guidance around failed inspections, emissions issues, and repair planning so you know the next step quickly.",
@@ -69,6 +71,7 @@ export const site = {
     },
     {
       slug: "diagnostics-repair",
+      kicker: "Diagnostic Work",
       title: "Diagnostics And General Repair",
       summary:
         "Brake work, engine concerns, electrical issues, drivability complaints, and practical repair plans you can approve with confidence.",
@@ -78,6 +81,7 @@ export const site = {
     },
     {
       slug: "tires-alignment",
+      kicker: "Tires And Wheels",
       title: "Tires And Alignment",
       summary:
         "Access to popular tire brands plus alignment support that protects ride quality, tire life, and safe handling.",
