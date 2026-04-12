@@ -90,8 +90,8 @@ export default function HomePage() {
 
       <section className="section contrast">
         <div className="section-heading">
-          <p className="eyebrow">Our Work</p>
-          <h2>Core services carried over from the current site and organized more clearly.</h2>
+          <p className="eyebrow">Core Services</p>
+          <h2>From routine maintenance to more involved repairs, we help drivers keep their vehicles safe, reliable, and ready for the road.</h2>
           <p>
             We understand vehicle maintenance as well as mechanical failures. This section keeps the
             current service categories, but packages them in a way that is easier for customers and
