@@ -71,7 +71,7 @@ export const site = {
     },
     {
       slug: "diagnostics-repair",
-      kicker: "Diagnostic Work And Repair",
+      kicker: "Diagnostic And Repair Work",
       title: "Diagnostics And General Repair",
       summary:
         "Brake work, engine concerns, electrical issues, drivability complaints, and practical repair plans you can approve with confidence.",
