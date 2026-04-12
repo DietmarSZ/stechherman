@@ -18,9 +18,7 @@ export default function ServicesPage() {
       <header className="inner-hero">
         <p className="eyebrow">Service Overview</p>
         <h1 className="services-hero-title">
-          Repair categories we can expand
-          <br />
-          into high-intent local landing pages.
+          Quality service, great value, and fast repairs for Asian and domestic vehicles.
         </h1>
         <p>
           This page gives the new site a stronger information architecture than the current build.
