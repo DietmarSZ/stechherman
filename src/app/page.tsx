@@ -7,9 +7,9 @@ export const revalidate = 3600;
 
 const proofPoints = [
   {
-    title: "No Appointment Necessary",
+    title: "Easy Communication",
     description:
-      "Service designed around you—no appointment needed. Drop in at your convenience or schedule ahead with a quick call.",
+      "You’ll get clear updates, honest recommendations, and a service experience that feels straightforward from start to finish.",
   },
   {
     title: "Professional Staff",
