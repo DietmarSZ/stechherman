@@ -638,6 +638,10 @@ span {
   line-height: 1;
 }
 
+.about-hero-title {
+  max-width: 26ch;
+}
+
 .services-hero-title {
   max-width: 48ch;
   font-size: clamp(2rem, 3.2vw, 3rem);

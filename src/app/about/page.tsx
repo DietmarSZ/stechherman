@@ -22,7 +22,9 @@ export default function AboutPage() {
     <main className="inner-page">
       <header className="inner-hero">
         <p className="eyebrow">About S-Tech</p>
-        <h1>A neighborhood repair shop with dealership-level standards.</h1>
+        <h1 className="about-hero-title">
+          A neighborhood repair shop with dealership-level standards.
+        </h1>
         <p>
           We&apos;re your neighborhood repair shop powered by dealership-level tools, training, and
           standards. Our goal is simple: make car care easier, more transparent, and genuinely
