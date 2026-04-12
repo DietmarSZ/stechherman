@@ -88,11 +88,22 @@ export default function ContactPage() {
           </div>
         </article>
 
-        <article className="panel">
-          <p className="eyebrow">Phone</p>
-          <h2>{site.phone}</h2>
+        <article className="panel video-panel">
+          <p className="eyebrow">Arrival Video</p>
+          <h2>Watch how to arrive and park.</h2>
+          <div className="video-frame">
+            <iframe
+              title="S-Tech Auto Repair arrival and parking video"
+              src="https://www.youtube.com/embed/BwByccpCaMY"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              referrerPolicy="strict-origin-when-cross-origin"
+            />
+          </div>
           <p>
-            Call ahead if you want to talk through a repair, maintenance question, or visit timing.
+            This quick walkthrough shows where to turn in and how to get parked once you arrive at
+            the shop.
           </p>
         </article>
 
