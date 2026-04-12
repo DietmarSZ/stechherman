@@ -67,6 +67,7 @@ export default function ContactPage() {
             {site.address.addressLocality}, {site.address.addressRegion} {site.address.postalCode}
           </p>
           <p>{site.directionsNote}</p>
+          <p className="eyebrow">Mailing Address</p>
           <p>
             Mailing address: 1025 E. El Camino Real, Sunnyvale, CA 94087
           </p>
