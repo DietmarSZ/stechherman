@@ -104,7 +104,7 @@ export const site = {
     {
       question: "Do you help with check engine light and emissions issues?",
       answer:
-        "Yes. The rebuild is structured around smog-related guidance and diagnostics so customers can understand likely causes and next steps before they visit.",
+        "We offer smog-related services, but we are not a STAR station and do not perform STAR-certified inspections. We do diagnose check engine lights and handle emissions-related repair work.",
     },
     {
       question: "Why build the site around AEO as well as SEO?",
