@@ -120,12 +120,11 @@ export default function HomePage() {
 
       <section className="section split">
         <article className="panel panel-large">
-          <p className="eyebrow">Shop Confidence</p>
-          <h2>Customers should immediately see what makes the shop easy to trust.</h2>
+          <p className="eyebrow">Trust Starts Here</p>
+          <h2>From your first visit, you should feel confident in the service you&apos;re getting.</h2>
           <p>
-            The current site mentions drive-ins, ASE-certified technicians, modern tools, and a
-            comfortable waiting room. Those are exactly the kinds of trust signals we can keep and
-            improve with real photos, updated details, and stronger content.
+            We focus on clear communication, dependable workmanship, and a customer experience that
+            feels honest, straightforward, and professional.
           </p>
         </article>
         <article className="panel panel-accent">
