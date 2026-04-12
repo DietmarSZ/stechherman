@@ -75,44 +75,6 @@ export default function ContactPage() {
           </div>
         </article>
 
-        <article className="panel info-block">
-          <p className="eyebrow">Book your visit now</p>
-          <h2>Contact Us</h2>
-          <p>{site.locationNote}</p>
-          <p>
-            Call us at{" "}
-            <PhoneAction
-              className="inline-phone-link"
-              label={site.phone}
-              phone={site.phone}
-              phoneHref={site.phoneHref}
-            />{" "}
-            or email{" "}
-            <a href={site.emailHref}>{site.email}</a>.
-          </p>
-        </article>
-      </section>
-
-      <section className="contact-grid">
-        <article className="panel">
-          <p className="eyebrow">Address</p>
-          <h2>{site.address.streetAddress}</h2>
-          <p>
-            {site.address.addressLocality}, {site.address.addressRegion} {site.address.postalCode}
-          </p>
-          <p>{site.directionsNote}</p>
-        </article>
-
-        <article className="panel">
-          <p className="eyebrow">Working Hours</p>
-          <h2>Monday to Friday</h2>
-          <div className="hours">
-            {site.hours.map((line) => (
-              <span key={line}>{line}</span>
-            ))}
-          </div>
-        </article>
-
         <article className="panel video-panel">
           <p className="eyebrow">Arrival Video</p>
           <h2>Watch how to arrive and park.</h2>
@@ -135,6 +97,44 @@ export default function ContactPage() {
             This quick walkthrough shows where to turn in and how to get parked once you arrive at
             the shop.
           </p>
+        </article>
+      </section>
+
+      <section className="contact-grid">
+        <article className="panel info-block">
+          <p className="eyebrow">Book your visit now</p>
+          <h2>Contact Us</h2>
+          <p>{site.locationNote}</p>
+          <p>
+            Call us at{" "}
+            <PhoneAction
+              className="inline-phone-link"
+              label={site.phone}
+              phone={site.phone}
+              phoneHref={site.phoneHref}
+            />{" "}
+            or email{" "}
+            <a href={site.emailHref}>{site.email}</a>.
+          </p>
+        </article>
+
+        <article className="panel">
+          <p className="eyebrow">Address</p>
+          <h2>{site.address.streetAddress}</h2>
+          <p>
+            {site.address.addressLocality}, {site.address.addressRegion} {site.address.postalCode}
+          </p>
+          <p>{site.directionsNote}</p>
+        </article>
+
+        <article className="panel">
+          <p className="eyebrow">Working Hours</p>
+          <h2>Monday to Friday</h2>
+          <div className="hours">
+            {site.hours.map((line) => (
+              <span key={line}>{line}</span>
+            ))}
+          </div>
         </article>
 
         <article className="panel">
