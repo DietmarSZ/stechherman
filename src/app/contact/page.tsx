@@ -40,13 +40,21 @@ export default function ContactPage() {
 
       <section className="find-us-grid">
         <article className="panel panel-large map-panel">
-          <div className="map-frame">
-            <iframe
-              title="S-Tech Auto Repair map"
-              src="https://www.google.com/maps?q=1011%20E.%20El%20Camino%20Real%2C%20Sunnyvale%2C%20CA%2094087&z=15&output=embed"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
+          <div className="map-card">
+            <p className="eyebrow">Map And Directions</p>
+            <h2>Open our location in Google Maps.</h2>
+            <p>
+              Use your preferred map app for turn-by-turn directions to {site.address.streetAddress},{" "}
+              {site.address.addressLocality}, {site.address.addressRegion} {site.address.postalCode}.
+            </p>
+            <Link
+              className="button button-primary"
+              href="https://www.google.com/maps/search/?api=1&query=1011+E.+El+Camino+Real,+Sunnyvale,+CA+94087"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Open In Google Maps
+            </Link>
           </div>
         </article>
 
@@ -91,16 +99,21 @@ export default function ContactPage() {
         <article className="panel video-panel">
           <p className="eyebrow">Arrival Video</p>
           <h2>Watch how to arrive and park.</h2>
-          <div className="video-frame">
-            <iframe
-              title="S-Tech Auto Repair arrival and parking video"
-              src="https://www.youtube.com/embed/BwByccpCaMY"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-              referrerPolicy="strict-origin-when-cross-origin"
+          <Link
+            className="video-frame video-link"
+            href="https://youtu.be/BwByccpCaMY?si=H0MKRFjUj4-Z9Opv"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="https://i.ytimg.com/vi/BwByccpCaMY/hqdefault.jpg"
+              alt="Preview image for the S-Tech Auto Repair arrival and parking video"
             />
-          </div>
+            <span className="video-play-button" aria-hidden="true">
+              Play Video
+            </span>
+          </Link>
           <p>
             This quick walkthrough shows where to turn in and how to get parked once you arrive at
             the shop.
