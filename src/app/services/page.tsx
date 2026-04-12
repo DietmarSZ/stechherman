@@ -18,7 +18,9 @@ export default function ServicesPage() {
       <header className="inner-hero">
         <p className="eyebrow">Service Overview</p>
         <h1 className="services-hero-title">
-          Quality service, great value, and fast repairs for Asian and domestic vehicles.
+          Quality service, great value,
+          <br />
+          and fast repairs for Asian and domestic vehicles.
         </h1>
         <p>
           This page gives the new site a stronger information architecture than the current build.
