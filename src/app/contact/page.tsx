@@ -111,7 +111,7 @@ export default function ContactPage() {
 
         <article className="panel video-panel">
           <p className="eyebrow">Arrival Video</p>
-          <h2>Watch how to arrive and park.</h2>
+          <h2>See exactly where to turn in.</h2>
           <Link
             className="video-frame video-link"
             href="https://youtu.be/BwByccpCaMY?si=H0MKRFjUj4-Z9Opv"
