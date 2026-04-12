@@ -559,11 +559,14 @@ span {
 }
 
 .contrast .service-card,
-.panel-accent,
 .offer-card {
   background:
     linear-gradient(180deg, rgba(255, 138, 51, 0.08), rgba(255, 255, 255, 1)),
     var(--surface-soft);
+}
+
+.panel-accent {
+  background: var(--surface);
 }
 
 .offer-price {
