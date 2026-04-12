@@ -6,6 +6,8 @@ type Offer = {
   expiresOn: string;
 };
 
+const BUSINESS_TIME_ZONE = "America/Los_Angeles";
+
 export const site = {
   name: "Stech Auto Repair",
   displayName: "S-Tech Auto Repair",
@@ -126,26 +128,52 @@ export const site = {
   ] satisfies Offer[],
 };
 
-function parseDateOnly(value: string) {
-  return new Date(`${value}T00:00:00`);
+function getDateKey(date = new Date(), timeZone = BUSINESS_TIME_ZONE) {
+  const formatter = new Intl.DateTimeFormat("en-US", {
+    timeZone,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  });
+  const parts = formatter.formatToParts(date);
+  const year = parts.find((part) => part.type === "year")?.value;
+  const month = parts.find((part) => part.type === "month")?.value;
+  const day = parts.find((part) => part.type === "day")?.value;
+
+  return `${year}-${month}-${day}`;
 }
 
-function isOfferActive(offer: Offer, today = new Date()) {
-  const expiry = parseDateOnly(offer.expiresOn);
-  expiry.setHours(23, 59, 59, 999);
-  return today <= expiry;
+function getMonthNameFromKey(dateKey: string) {
+  const [year, month] = dateKey.split("-").map(Number);
+  return new Intl.DateTimeFormat("en-US", { month: "long", timeZone: "UTC" }).format(
+    new Date(Date.UTC(year, month - 1, 1)),
+  );
 }
 
-export function getCurrentOffers(today = new Date()) {
-  return site.offers.filter((offer) => isOfferActive(offer, today));
+function getNextMonthKey(dateKey: string) {
+  const [year, month] = dateKey.split("-").map(Number);
+  const nextMonth = month === 12 ? 1 : month + 1;
+  const nextYear = month === 12 ? year + 1 : year;
+  return `${nextYear}-${String(nextMonth).padStart(2, "0")}-01`;
 }
 
-export function getOfferFallbackMonth(today = new Date()) {
-  const futureDates = site.offers.map((offer) => parseDateOnly(offer.expiresOn));
-  const latestExpiry = futureDates.sort((a, b) => b.getTime() - a.getTime())[0] ?? today;
-  const monthSource = today > latestExpiry ? today : new Date(latestExpiry.getFullYear(), latestExpiry.getMonth() + 1, 1);
+function isOfferActive(offer: Offer, now = new Date()) {
+  const todayKey = getDateKey(now);
+  return todayKey <= offer.expiresOn;
+}
 
-  return monthSource.toLocaleString("en-US", { month: "long" });
+export function getCurrentOffers(now = new Date()) {
+  return site.offers.filter((offer) => isOfferActive(offer, now));
+}
+
+export function getOfferFallbackMonth(now = new Date()) {
+  const todayKey = getDateKey(now);
+  const latestExpiryKey = [...site.offers]
+    .map((offer) => offer.expiresOn)
+    .sort((a, b) => b.localeCompare(a))[0] ?? todayKey;
+  const monthKey = todayKey > latestExpiryKey ? todayKey : getNextMonthKey(latestExpiryKey);
+
+  return getMonthNameFromKey(monthKey);
 }
 
 export function getBusinessSchema() {
