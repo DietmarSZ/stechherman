@@ -41,7 +41,12 @@ export default function ContactPage() {
         <article className="panel info-block">
           <p className="eyebrow">Book your visit now</p>
           <h2>Contact Us</h2>
-          <p>{site.locationNote}</p>
+          <p>
+            We are conveniently located in the heart of Silicon Valley, between Lawrence
+            Expressway and Wolfe Road on East El Camino Real in Sunnyvale. The driveway is just
+            before Starbucks and just past Sunnyvale Volkswagen (see arrival video below for more
+            information).
+          </p>
           <p>
             Call us at{" "}
             <PhoneAction
