@@ -107,9 +107,9 @@ export const site = {
         "We offer smog-related services, but we are not a STAR station and do not perform STAR-certified inspections. We do diagnose check engine lights and handle emissions-related repair work.",
     },
     {
-      question: "Why build the site around AEO as well as SEO?",
+      question: "Serving Bay Area Commuters And Locals",
       answer:
-        "Answer Engine Optimization helps the shop appear in AI-assisted search and rich results by using clearer service explanations, structured data, local entity signals, and concise answers to customer questions.",
+        "We’re proud to care for vehicles from customers who live nearby as well as those who work in Silicon Valley and commute in from across the Bay Area.",
     },
   ],
   offers: [
