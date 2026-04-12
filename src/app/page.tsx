@@ -92,11 +92,6 @@ export default function HomePage() {
         <div className="section-heading">
           <p className="eyebrow">Core Services</p>
           <h2>From routine maintenance to more involved repairs, we help drivers keep their vehicles safe, reliable, and ready for the road.</h2>
-          <p>
-            We understand vehicle maintenance as well as mechanical failures. This section keeps the
-            current service categories, but packages them in a way that is easier for customers and
-            search engines to understand.
-          </p>
         </div>
         <div className="service-grid">
           {site.services.map((service) => (
