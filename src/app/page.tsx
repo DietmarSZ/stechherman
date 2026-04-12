@@ -9,7 +9,7 @@ const proofPoints = [
   {
     title: "No Appointment Necessary",
     description:
-      "Drive-ins stay front and center, just like the current website, so customers know they can stop by without a complicated booking process.",
+      "Service designed around you—no appointment needed. Drop in at your convenience or schedule ahead with a quick call.",
   },
   {
     title: "Professional Staff",
