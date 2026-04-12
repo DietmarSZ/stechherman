@@ -17,9 +17,9 @@ const proofPoints = [
       "Our team is made up of highly trained, experienced technicians who take pride in doing the job right. You can count on professional, consistent service every time you visit.",
   },
   {
-    title: "Modern Service Tools",
+    title: "Quality You Can Trust",
     description:
-      "The new structure gives S-Tech Auto Repair a modern web presence while still feeling like the same practical neighborhood shop.",
+      "From routine maintenance to more involved repairs, we focus on careful work, clear communication, and dependable results.",
   },
 ];
 
