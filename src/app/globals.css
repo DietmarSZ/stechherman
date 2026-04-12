@@ -674,7 +674,15 @@ span {
   display: grid;
   gap: 1rem;
   min-height: 100%;
-  align-content: start;
+  align-content: center;
+  justify-items: start;
+  background: linear-gradient(180deg, rgba(255, 138, 51, 0.05), rgba(255, 255, 255, 1));
+  border-radius: var(--radius-md);
+}
+
+.map-card-badge {
+  width: auto;
+  height: 72px;
 }
 
 .video-frame {

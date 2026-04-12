@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PhoneAction } from "@/components/phone-action";
@@ -41,12 +42,20 @@ export default function ContactPage() {
       <section className="find-us-grid">
         <article className="panel panel-large map-panel">
           <div className="map-card">
+            <Image
+              src="/images/logo-round.png"
+              alt="S-Tech Auto Repair round logo"
+              width={72}
+              height={72}
+              className="map-card-badge"
+            />
             <p className="eyebrow">Map And Directions</p>
             <h2>Open our location in Google Maps.</h2>
             <p>
               Use your preferred map app for turn-by-turn directions to {site.address.streetAddress},{" "}
               {site.address.addressLocality}, {site.address.addressRegion} {site.address.postalCode}.
             </p>
+            <p>{site.directionsNote}</p>
             <Link
               className="button button-primary"
               href="https://www.google.com/maps/search/?api=1&query=1011+E.+El+Camino+Real,+Sunnyvale,+CA+94087"
