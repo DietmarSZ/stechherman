@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Antonio, Roboto } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import { PhoneAction } from "@/components/phone-action";
 import { SiteNav } from "@/components/site-nav";
@@ -114,6 +115,7 @@ export default function RootLayout({
               />
             </div>
           </footer>
+          <Analytics />
         </div>
       </body>
     </html>
