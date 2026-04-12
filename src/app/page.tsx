@@ -128,14 +128,12 @@ export default function HomePage() {
           </p>
         </article>
         <article className="panel panel-accent">
-          <p className="eyebrow">What Comes Next</p>
-          <h2>As soon as you send images and logos, we can make this feel like the real brand.</h2>
-          <ul className="check-list">
-            <li>More original photography galleries and exterior or interior shop shots</li>
-            <li>Additional logo lockups if you have them</li>
-            <li>Updated coupons and specials with current dates</li>
-            <li>Reviews, FAQs, and neighborhood-specific location content</li>
-          </ul>
+          <p className="eyebrow">Service That Fits Your Day</p>
+          <h2>We know car care has to fit into real life.</h2>
+          <p>
+            Our goal is to make each visit efficient, professional, and easier to work into your
+            schedule.
+          </p>
         </article>
       </section>
 
