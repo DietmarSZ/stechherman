@@ -76,7 +76,8 @@ main {
 .utility-content p,
 .utility-content a,
 .utility-tagline,
-.utility-phone {
+.utility-phone,
+.utility-value {
   margin: 0;
   color: #fff7f1;
 }
@@ -89,6 +90,15 @@ main {
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
+  white-space: nowrap;
+}
+
+.utility-value {
+  font-size: 0.96rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  justify-self: end;
+  text-align: right;
   white-space: nowrap;
 }
 
@@ -841,7 +851,8 @@ span {
   .header-phone,
   .utility-content p,
   .utility-tagline,
-  .utility-phone {
+  .utility-phone,
+  .utility-value {
     position: static;
     transform: none;
     justify-self: start;

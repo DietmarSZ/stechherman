@@ -61,12 +61,7 @@ export default function RootLayout({
               <div className="utility-content">
                 <p>{site.address.streetAddress}, {site.address.addressLocality}, {site.address.addressRegion} {site.address.postalCode}</p>
                 <span className="utility-tagline">In the heart of the Silicon Valley.</span>
-                <PhoneAction
-                  className="utility-phone"
-                  label={`Call Us Now ${site.phone}`}
-                  phone={site.phone}
-                  phoneHref={site.phoneHref}
-                />
+                <span className="utility-value">Great prices on quality repairs.</span>
               </div>
             </div>
             <header className="site-header">
