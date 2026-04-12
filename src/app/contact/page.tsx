@@ -144,9 +144,10 @@ export default function ContactPage() {
             ))}
           </div>
           <p>
-            Need to leave your car while we&apos;re closed? No problem. Drop it off in the service
-            lane at Sunnyvale Volkswagen, fill out the convenient night-drop form, and leave your
-            key in the secure night-drop box.
+            Need to leave your car while we&apos;re closed? No problem. Use Sunnyvale Volkswagen,
+            which is attached to our building. Pull into the first Volkswagen driveway marked
+            &quot;Service,&quot; be sure to lock your car, and we&apos;ll call you the next business
+            day morning as soon as we check your vehicle in.
           </p>
         </article>
 
