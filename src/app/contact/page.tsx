@@ -6,7 +6,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact Stech Auto Repair in Sunnyvale, CA for maintenance, repair, diagnostics, and tire service questions.",
+    "Contact S-Tech Auto Repair in Sunnyvale, CA for maintenance, repair, diagnostics, and tire service questions.",
   alternates: {
     canonical: "/contact",
   },
@@ -42,7 +42,7 @@ export default function ContactPage() {
         <article className="panel panel-large map-panel">
           <div className="map-frame">
             <iframe
-              title="Stech Auto Repair map"
+              title="S-Tech Auto Repair map"
               src="https://www.google.com/maps?q=1011%20E.%20El%20Camino%20Real%2C%20Sunnyvale%2C%20CA%2094087&z=15&output=embed"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

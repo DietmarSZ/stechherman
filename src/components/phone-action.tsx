@@ -54,7 +54,7 @@ export function PhoneAction({ className, label, phone, phoneHref }: PhoneActionP
             aria-labelledby="phone-modal-title"
             onClick={(event) => event.stopPropagation()}
           >
-            <p className="eyebrow">Call Stech Auto Repair</p>
+            <p className="eyebrow">Call S-Tech Auto Repair</p>
             <h2 id="phone-modal-title">{phone}</h2>
             <p>
               On desktop, your browser may hand phone links off to another app. You can copy the

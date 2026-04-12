@@ -8,6 +8,7 @@ type Offer = {
 
 export const site = {
   name: "Stech Auto Repair",
+  displayName: "S-Tech Auto Repair",
   url: "https://stechautorepair.com",
   phone: "(408) 389-5005",
   phoneHref: "tel:+14083895005",
@@ -32,7 +33,7 @@ export const site = {
     eyebrow: "Auto Repair In Sunnyvale, CA",
     title: "Quality service, great value, and fast repairs for Asian and domestic vehicles.",
     description:
-      "Stech Auto Repair serves Sunnyvale drivers with straightforward maintenance, smog support, diagnostics, brakes, tires, and general repair work. The rebuild keeps the familiar shop message while giving the business a stronger modern website.",
+      "S-Tech Auto Repair serves Sunnyvale drivers with straightforward maintenance, smog support, diagnostics, brakes, tires, and general repair work. The rebuild keeps the familiar shop message while giving the business a stronger modern website.",
   },
   primaryCtas: [
     { label: "Call The Shop", href: "tel:+14083895005" },
@@ -87,7 +88,7 @@ export const site = {
     {
       question: "What kinds of vehicles do you service?",
       answer:
-        "Stech Auto Repair focuses on Asian and domestic vehicles and handles a wide mix of routine maintenance and repair work.",
+        "S-Tech Auto Repair focuses on Asian and domestic vehicles and handles a wide mix of routine maintenance and repair work.",
     },
     {
       question: "Can I bring my car in without an appointment?",

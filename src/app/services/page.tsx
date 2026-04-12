@@ -6,7 +6,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Explore maintenance, smog support, diagnostics, general repair, and tire service categories for Stech Auto Repair in Sunnyvale.",
+    "Explore maintenance, smog support, diagnostics, general repair, and tire service categories for S-Tech Auto Repair in Sunnyvale.",
   alternates: {
     canonical: "/services",
   },

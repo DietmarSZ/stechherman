@@ -5,7 +5,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn about the Stech Auto Repair website rebuild, local service philosophy, and the trust-building content we are using for Sunnyvale drivers.",
+    "Learn about the S-Tech Auto Repair website rebuild, local service philosophy, and the trust-building content we are using for Sunnyvale drivers.",
   alternates: {
     canonical: "/about",
   },

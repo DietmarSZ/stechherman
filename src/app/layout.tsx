@@ -22,8 +22,8 @@ const bodyFont = Roboto({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Stech Auto Repair | Sunnyvale Auto Repair And Maintenance",
-    template: "%s | Stech Auto Repair",
+    default: "S-Tech Auto Repair | Sunnyvale Auto Repair And Maintenance",
+    template: `%s | ${site.displayName}`,
   },
   description:
     "Sunnyvale auto repair website rebuild with stronger service content, local trust signals, and answer-engine-friendly structure for maintenance, diagnostics, smog help, tires, and repair planning.",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Stech Auto Repair",
+    title: site.displayName,
     description:
       "Auto repair and maintenance in Sunnyvale with clearer service pages, local trust content, and booking-focused design.",
     url: site.url,
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Stech Auto Repair",
+    title: site.displayName,
     description:
       "Auto repair and maintenance in Sunnyvale with stronger local content and booking pathways.",
   },
@@ -73,7 +73,7 @@ export default function RootLayout({
               <Link className="brand-mark" href="/">
                 <Image
                   src="/images/logo-square.png"
-                  alt="Stech Auto Repair logo"
+                  alt="S-Tech Auto Repair logo"
                   width={217}
                   height={104}
                   priority
@@ -95,7 +95,7 @@ export default function RootLayout({
             <div>
               <Image
                 src="/images/logo-square.png"
-                alt="Stech Auto Repair logo"
+                alt="S-Tech Auto Repair logo"
                 width={170}
                 height={82}
                 className="footer-logo"

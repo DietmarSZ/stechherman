@@ -19,7 +19,7 @@ const proofPoints = [
   {
     title: "Modern Service Tools",
     description:
-      "The new structure gives Stech Auto Repair a modern web presence while still feeling like the same practical neighborhood shop.",
+      "The new structure gives S-Tech Auto Repair a modern web presence while still feeling like the same practical neighborhood shop.",
   },
 ];
 
@@ -43,7 +43,7 @@ export default function HomePage() {
       <section className="top-intro">
         <article className="top-intro-copy">
           <p>
-            Stech Auto Repair offers inexpensive, efficient maintenance and repair services for your
+            S-Tech Auto Repair offers inexpensive, efficient maintenance and repair services for your
             Asian or domestic automobile.
           </p>
         </article>
@@ -152,7 +152,7 @@ export default function HomePage() {
           <div className="specials-bar">
             <span>Current Specials</span>
           </div>
-          <h2>Featured service offers available right now at Stech Auto Repair.</h2>
+          <h2>Featured service offers available right now at S-Tech Auto Repair.</h2>
         </div>
         {activeOffers.length > 0 ? (
           <div className="offer-grid">
@@ -160,7 +160,7 @@ export default function HomePage() {
               <article key={offer.title} className="offer-card">
                 <Image
                   src="/images/logo-square.png"
-                  alt="Stech Auto Repair logo"
+                  alt="S-Tech Auto Repair logo"
                   width={74}
                   height={36}
                   className="offer-logo"
@@ -180,7 +180,7 @@ export default function HomePage() {
             </p>
             <Image
               src="/images/logo-square-white-text.png"
-              alt="Stech Auto Repair logo"
+              alt="S-Tech Auto Repair logo"
               width={188}
               height={97}
               className="offer-fallback-logo"
