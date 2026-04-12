@@ -14,7 +14,7 @@ const proofPoints = [
   {
     title: "Professional Staff",
     description:
-      "We are rebuilding the site around clarity, trust, and clean service explanations instead of thin generic content.",
+      "Our team is made up of highly trained, experienced technicians who take pride in doing the job right. You can count on professional, consistent service every time you visit.",
   },
   {
     title: "Modern Service Tools",
