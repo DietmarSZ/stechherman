@@ -174,18 +174,20 @@ export default function HomePage() {
             ))}
           </div>
         ) : (
-          <article className="offer-fallback-card">
-            <p>
-              This special has ended. We&apos;re getting a new offer ready for {fallbackMonth}.
-            </p>
-            <Image
-              src="/images/logo-square-white-text.png"
-              alt="S-Tech Auto Repair logo"
-              width={188}
-              height={97}
-              className="offer-fallback-logo"
-            />
-          </article>
+          <div className="offer-grid">
+            {[0, 1].map((cardIndex) => (
+              <article key={cardIndex} className="offer-fallback-card">
+                <p>This special has ended. We&apos;re getting a new offer ready for {fallbackMonth}.</p>
+                <Image
+                  src="/images/logo-square-white-text.png"
+                  alt="S-Tech Auto Repair logo"
+                  width={188}
+                  height={97}
+                  className="offer-fallback-logo"
+                />
+              </article>
+            ))}
+          </div>
         )}
       </section>
 

@@ -171,7 +171,7 @@ export function getOfferFallbackMonth(now = new Date()) {
   const latestExpiryKey = [...site.offers]
     .map((offer) => offer.expiresOn)
     .sort((a, b) => b.localeCompare(a))[0] ?? todayKey;
-  const monthKey = todayKey > latestExpiryKey ? todayKey : getNextMonthKey(latestExpiryKey);
+  const monthKey = getNextMonthKey(latestExpiryKey);
 
   return getMonthNameFromKey(monthKey);
 }
