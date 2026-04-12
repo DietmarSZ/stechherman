@@ -124,13 +124,13 @@ export default function ContactPage() {
           <h2>See exactly where to turn in.</h2>
           <Link
             className="video-frame video-link"
-            href="https://youtu.be/BwByccpCaMY?si=H0MKRFjUj4-Z9Opv"
+            href="https://youtu.be/l6bIdxIBYMU"
             target="_blank"
             rel="noreferrer"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="https://i.ytimg.com/vi/BwByccpCaMY/hqdefault.jpg"
+              src="https://i.ytimg.com/vi/l6bIdxIBYMU/hqdefault.jpg"
               alt="Preview image for the S-Tech Auto Repair arrival and parking video"
             />
             <span className="video-play-button" aria-hidden="true">
