@@ -72,13 +72,11 @@ export default function HomePage() {
 
       <section className="section">
         <div className="section-heading">
-          <p className="eyebrow">Located In The Heart Of Silicon Valley</p>
-          <h2>A better version of the current shop website, with the same message but stronger structure.</h2>
-          <p>
-            The live site already says the right things: quality service, great prices, fast repairs,
-            and support for Asian and domestic brands. This version keeps that identity and gives it a
-            cleaner, more trustworthy presentation.
-          </p>
+          <h2>
+            We&apos;re your neighborhood repair shop&#8212;powered by dealership-level tools,
+            training, and standards. Our goal is simple: make car care easier, more transparent,
+            and genuinely better.
+          </h2>
         </div>
         <div className="three-up">
           {proofPoints.map((point) => (
