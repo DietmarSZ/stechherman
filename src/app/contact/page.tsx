@@ -38,6 +38,34 @@ export default function ContactPage() {
       </header>
 
       <section className="find-us-grid">
+        <article className="panel info-block">
+          <p className="eyebrow">Book your visit now</p>
+          <h2>Contact Us</h2>
+          <p>{site.locationNote}</p>
+          <p>
+            Call us at{" "}
+            <PhoneAction
+              className="inline-phone-link"
+              label={site.phone}
+              phone={site.phone}
+              phoneHref={site.phoneHref}
+            />{" "}
+            or email{" "}
+            <a href={site.emailHref}>{site.email}</a>.
+          </p>
+        </article>
+
+        <article className="panel">
+          <p className="eyebrow">Address</p>
+          <h2>{site.address.streetAddress}</h2>
+          <p>
+            {site.address.addressLocality}, {site.address.addressRegion} {site.address.postalCode}
+          </p>
+          <p>{site.directionsNote}</p>
+        </article>
+      </section>
+
+      <section className="find-us-grid">
         <article className="panel panel-large map-panel">
           <div className="map-card">
             <Image
@@ -99,32 +127,6 @@ export default function ContactPage() {
       </section>
 
       <section className="contact-grid">
-        <article className="panel info-block">
-          <p className="eyebrow">Book your visit now</p>
-          <h2>Contact Us</h2>
-          <p>{site.locationNote}</p>
-          <p>
-            Call us at{" "}
-            <PhoneAction
-              className="inline-phone-link"
-              label={site.phone}
-              phone={site.phone}
-              phoneHref={site.phoneHref}
-            />{" "}
-            or email{" "}
-            <a href={site.emailHref}>{site.email}</a>.
-          </p>
-        </article>
-
-        <article className="panel">
-          <p className="eyebrow">Address</p>
-          <h2>{site.address.streetAddress}</h2>
-          <p>
-            {site.address.addressLocality}, {site.address.addressRegion} {site.address.postalCode}
-          </p>
-          <p>{site.directionsNote}</p>
-        </article>
-
         <article className="panel">
           <p className="eyebrow">Working Hours</p>
           <h2>Monday to Friday</h2>
