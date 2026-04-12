@@ -668,6 +668,17 @@ span {
   padding: 2rem;
 }
 
+.about-photo-panel {
+  padding: 1.1rem;
+}
+
+.about-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: calc(var(--radius-lg) - 0.35rem);
+}
+
 .video-panel {
   display: grid;
   gap: 1rem;
