@@ -109,6 +109,10 @@ main {
   border-bottom: 1px solid rgba(34, 32, 28, 0.06);
 }
 
+.site-footer {
+  position: relative;
+}
+
 .brand-mark {
   display: inline-flex;
   align-items: center;
@@ -127,6 +131,12 @@ main {
 }
 
 .site-nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.footer-links {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -745,6 +755,7 @@ span {
 
   .brand-mark,
   .site-nav,
+  .footer-links,
   .header-phone,
   .utility-content p,
   .utility-tagline,
