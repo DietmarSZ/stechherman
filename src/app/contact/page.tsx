@@ -51,6 +51,14 @@ export default function ContactPage() {
             />
             <p className="eyebrow">Map And Directions</p>
             <h2>Open our location in Google Maps.</h2>
+            <div className="map-frame">
+              <iframe
+                title="S-Tech Auto Repair map"
+                src="https://www.google.com/maps?q=1011%20E.%20El%20Camino%20Real%2C%20Sunnyvale%2C%20CA%2094087&z=15&output=embed"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
             <p>
               Use your preferred map app for turn-by-turn directions to {site.address.streetAddress},{" "}
               {site.address.addressLocality}, {site.address.addressRegion} {site.address.postalCode}.
