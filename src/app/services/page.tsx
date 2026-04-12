@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { Metadata } from "next";
-import { site } from "@/lib/site";
+import { getBreadcrumbSchema, getServicesPageSchema, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -12,8 +12,22 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesPage() {
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "Home", url: site.url },
+    { name: "Services", url: `${site.url}/services` },
+  ]);
+  const servicesPageSchema = getServicesPageSchema();
+
   return (
     <main className="inner-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesPageSchema) }}
+      />
       <header className="inner-hero">
         <p className="eyebrow">Service Overview</p>
         <h1 className="services-hero-title">
@@ -23,7 +37,7 @@ export default function ServicesPage() {
 
       <section className="service-grid">
         {site.services.map((service) => (
-          <article key={service.slug} className="service-card">
+          <article key={service.slug} id={service.slug} className="service-card">
             <div className="service-media">
               <Image
                 src={service.image}

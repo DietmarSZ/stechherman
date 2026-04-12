@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
+import { getBreadcrumbSchema, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About",
@@ -18,8 +19,17 @@ const highlights = [
 ];
 
 export default function AboutPage() {
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "Home", url: site.url },
+    { name: "About", url: `${site.url}/about` },
+  ]);
+
   return (
     <main className="inner-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <header className="inner-hero">
         <p className="eyebrow">About S-Tech</p>
         <h1 className="about-hero-title">

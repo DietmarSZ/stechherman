@@ -12,10 +12,21 @@ export const site = {
   name: "Stech Auto Repair",
   displayName: "S-Tech Auto Repair",
   url: "https://www.stechautorepair.com",
+  description:
+    "S-Tech Auto Repair provides quality service, great value, and fast repairs for Asian and domestic vehicles in Sunnyvale.",
   phone: "(408) 389-5005",
   phoneHref: "tel:+14083895005",
+  phoneSchema: "+14083895005",
   email: "service@stechautorepair.com",
   emailHref: "mailto:service@stechautorepair.com",
+  mapUrl:
+    "https://www.google.com/maps/search/?api=1&query=1011+E.+El+Camino+Real,+Sunnyvale,+CA+94087",
+  logoUrl: "https://www.stechautorepair.com/images/logo-square.png",
+  imageUrls: [
+    "https://www.stechautorepair.com/images/about-building.jpg",
+    "https://www.stechautorepair.com/images/service-diagnostic.jpg",
+    "https://www.stechautorepair.com/images/service-wheel.jpg",
+  ],
   address: {
     streetAddress: "1011 E. El Camino Real",
     addressLocality: "Sunnyvale",
@@ -35,7 +46,7 @@ export const site = {
     eyebrow: "Auto Repair In Sunnyvale, CA",
     title: "Quality service, great value, and fast repairs for Asian and domestic vehicles.",
     description:
-      "S-Tech Auto Repair serves Sunnyvale drivers with straightforward maintenance, smog support, diagnostics, brakes, tires, and general repair work. The rebuild keeps the familiar shop message while giving the business a stronger modern website.",
+      "S-Tech Auto Repair serves Sunnyvale drivers with straightforward maintenance, smog support, diagnostics, brakes, tires, and general repair work.",
   },
   primaryCtas: [
     { label: "Call The Shop", href: "tel:+14083895005" },
@@ -186,27 +197,33 @@ export function getBusinessSchema() {
     "@type": "AutoRepair",
     "@id": `${site.url}/#business`,
     name: site.name,
+    alternateName: site.displayName,
+    description: site.description,
     url: site.url,
-    telephone: site.phone,
+    telephone: site.phoneSchema,
+    email: site.email,
+    logo: site.logoUrl,
+    image: site.imageUrls,
+    hasMap: site.mapUrl,
     address: {
       "@type": "PostalAddress",
       ...site.address,
     },
     areaServed: site.serviceArea,
     priceRange: "$$",
-    image: `${site.url}/og-image.jpg`,
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "08:00",
-        closes: "17:30",
+        opens: "08:00:00",
+        closes: "17:00:00",
       },
     ],
     makesOffer: site.services.map((service) => ({
       "@type": "Offer",
       itemOffered: {
         "@type": "Service",
+        serviceType: service.title,
         name: service.title,
         description: service.summary,
       },
@@ -226,5 +243,71 @@ export function getFaqSchema() {
         text: faq.answer,
       },
     })),
+  };
+}
+
+export function getWebsiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${site.url}/#website`,
+    url: site.url,
+    name: site.displayName,
+    description: site.description,
+    publisher: {
+      "@id": `${site.url}/#business`,
+    },
+    inLanguage: "en-US",
+  };
+}
+
+type BreadcrumbItem = {
+  name: string;
+  url: string;
+};
+
+export function getBreadcrumbSchema(items: BreadcrumbItem[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+}
+
+export function getServicesPageSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${site.url}/services/#page`,
+    url: `${site.url}/services`,
+    name: "Services",
+    description:
+      "Maintenance, smog support, diagnostics, repair, and tire services for Asian and domestic vehicles in Sunnyvale.",
+    isPartOf: {
+      "@id": `${site.url}/#website`,
+    },
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: site.services.map((service, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        url: `${site.url}/services#${service.slug}`,
+        item: {
+          "@type": "Service",
+          name: service.title,
+          serviceType: service.title,
+          description: service.summary,
+          provider: {
+            "@id": `${site.url}/#business`,
+          },
+          areaServed: site.serviceArea,
+        },
+      })),
+    },
   };
 }

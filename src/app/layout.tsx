@@ -6,7 +6,7 @@ import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import { PhoneAction } from "@/components/phone-action";
 import { SiteNav } from "@/components/site-nav";
-import { site } from "@/lib/site";
+import { getWebsiteSchema, site } from "@/lib/site";
 
 const headingFont = Antonio({
   subsets: ["latin"],
@@ -26,25 +26,29 @@ export const metadata: Metadata = {
     default: "S-Tech Auto Repair | Sunnyvale Auto Repair And Maintenance",
     template: `%s | ${site.displayName}`,
   },
-  description:
-    "Sunnyvale auto repair website rebuild with stronger service content, local trust signals, and answer-engine-friendly structure for maintenance, diagnostics, smog help, tires, and repair planning.",
+  description: site.description,
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: site.displayName,
-    description:
-      "Auto repair and maintenance in Sunnyvale with clearer service pages, local trust content, and booking-focused design.",
+    description: site.description,
     url: site.url,
     siteName: site.name,
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: site.imageUrls[0],
+        alt: "Exterior of S-Tech Auto Repair in Sunnyvale",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: site.displayName,
-    description:
-      "Auto repair and maintenance in Sunnyvale with stronger local content and booking pathways.",
+    description: site.description,
+    images: [site.imageUrls[0]],
   },
 };
 
@@ -53,10 +57,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const websiteSchema = getWebsiteSchema();
+
   return (
     <html lang="en">
       <body className={`${headingFont.variable} ${bodyFont.variable}`}>
         <div className="site-frame">
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+          />
           <div className="top-shell">
             <div className="utility-bar">
               <div className="utility-content">

@@ -2,7 +2,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PhoneAction } from "@/components/phone-action";
-import { site } from "@/lib/site";
+import { getBreadcrumbSchema, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -14,8 +14,17 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "Home", url: site.url },
+    { name: "Contact", url: `${site.url}/contact` },
+  ]);
+
   return (
     <main className="inner-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <header className="inner-hero">
         <p className="eyebrow">Find Us</p>
         <h1 className="contact-hero-title">
