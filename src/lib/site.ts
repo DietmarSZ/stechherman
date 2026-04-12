@@ -90,7 +90,7 @@ export const site = {
     {
       question: "What kinds of vehicles do you service?",
       answer:
-        "S-Tech Auto Repair focuses on Asian and domestic vehicles and handles a wide mix of routine maintenance and repair work.",
+        "S-Tech Auto Repair focuses on Asian and domestic vehicles and handles a wide mix of routine maintenance and repair work. At this time, we do not service Tesla vehicles.",
     },
     {
       question: "Can I bring my car in without an appointment?",
