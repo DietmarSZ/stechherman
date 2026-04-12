@@ -230,12 +230,12 @@ main {
 }
 
 .top-intro-copy p {
-  max-width: 20ch;
+  max-width: 21ch;
   margin: 0;
   color: #ffffff;
-  font-size: clamp(1.85rem, 2.55vw, 2.55rem);
-  line-height: 1.06;
-  font-weight: 500;
+  font-size: clamp(1.65rem, 2.25vw, 2.2rem);
+  line-height: 1.1;
+  font-weight: 400;
 }
 
 .top-intro-signals {
@@ -264,8 +264,8 @@ main {
   position: relative;
   padding-left: 1.7rem;
   color: var(--ink);
-  font-size: clamp(1.15rem, 1.75vw, 1.7rem);
-  line-height: 1.12;
+  font-size: clamp(1.22rem, 1.85vw, 1.8rem);
+  line-height: 1.1;
 }
 
 .top-signal-list li::before {
@@ -813,11 +813,11 @@ span {
   }
 
   .top-intro-copy p {
-    font-size: clamp(1.55rem, 8vw, 2.1rem);
+    font-size: clamp(1.45rem, 7vw, 1.95rem);
   }
 
   .top-signal-list li {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
   }
 
   .button {
