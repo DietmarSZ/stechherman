@@ -40,79 +40,35 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <section className="hero-banner">
-        <div className="hero-banner-image">
+      <section className="top-intro">
+        <article className="top-intro-copy">
+          <p>
+            Stech Auto Repair offers inexpensive, efficient maintenance and repair services for your
+            Asian or domestic automobile.
+          </p>
+        </article>
+
+        <article className="top-intro-signals">
+          <ul className="top-signal-list">
+            {site.heroPoints.map((signal) => (
+              <li key={signal}>{signal}</li>
+            ))}
+          </ul>
+        </article>
+
+        <div className="top-intro-media">
           <Image
             src="/images/service-wheel.jpg"
             alt="Technician working on a wheel and tire assembly in the repair bay"
             fill
             priority
-            className="banner-image"
-            sizes="(max-width: 960px) 100vw, 50vw"
+            className="top-intro-image"
+            sizes="(max-width: 960px) 100vw, 33vw"
           />
-        </div>
-        <div className="hero-banner-fill">
-          <p>
-            S-Tech Auto Repair, offers inexpensive, efficient maintenance and repair services for
-            your Asian or domestic make automobiles.
-          </p>
         </div>
       </section>
 
       <div className="hero-divider" aria-hidden="true" />
-
-      <section className="intro-grid">
-        <article className="hero-copy intro-primary">
-          <p className="eyebrow">{site.hero.eyebrow}</p>
-          <h1>{site.hero.title}</h1>
-          <p className="lede">{site.hero.description}</p>
-          <div className="cta-row">
-            <PhoneAction
-              className="button button-primary"
-              label="Call The Shop"
-              phone={site.phone}
-              phoneHref={site.phoneHref}
-            />
-            <Link className="button button-secondary" href="/contact">
-              Find Us
-            </Link>
-          </div>
-        </article>
-
-        <aside className="intro-side">
-          <article className="panel info-block">
-            <Image
-              src="/images/logo-round.png"
-              alt="Round Stech Auto Repair logo"
-              width={74}
-              height={73}
-              className="info-badge"
-            />
-            <p className="card-label">Visit the shop</p>
-            <h2>{site.name}</h2>
-            <p>
-              {site.address.streetAddress}
-              <br />
-              {site.address.addressLocality}, {site.address.addressRegion} {site.address.postalCode}
-            </p>
-            <PhoneAction
-              className="inline-phone-link"
-              label={site.phone}
-              phone={site.phone}
-              phoneHref={site.phoneHref}
-            />
-          </article>
-
-          <article className="panel signal-panel">
-            <p className="card-label">Why drivers choose Stech</p>
-            <ul className="signal-list">
-              {site.heroPoints.map((signal) => (
-                <li key={signal}>{signal}</li>
-              ))}
-            </ul>
-          </article>
-        </aside>
-      </section>
 
       <section className="section">
         <div className="section-heading">

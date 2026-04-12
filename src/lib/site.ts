@@ -39,10 +39,11 @@ export const site = {
     { label: "View Services", href: "/services" },
   ],
   heroPoints: [
-    "No appointment necessary",
-    "Professional staff",
-    "Modern service tools",
-    "ASE-certified technicians",
+    "Fast service",
+    "Quality repair",
+    "Trained technicians",
+    "No appointment needed",
+    "Dealership style amenities",
   ],
   services: [
     {
