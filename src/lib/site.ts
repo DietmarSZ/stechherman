@@ -11,7 +11,7 @@ const BUSINESS_TIME_ZONE = "America/Los_Angeles";
 export const site = {
   name: "Stech Auto Repair",
   displayName: "S-Tech Auto Repair",
-  url: "https://stechautorepair.com",
+  url: "https://www.stechautorepair.com",
   phone: "(408) 389-5005",
   phoneHref: "tel:+14083895005",
   email: "service@stechautorepair.com",
