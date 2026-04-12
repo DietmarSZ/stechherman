@@ -186,7 +186,7 @@ export default function HomePage() {
       <section className="section">
         <div className="section-heading">
           <p className="eyebrow">Common Questions</p>
-          <h2>Answer-friendly content that supports both AI search and practical customer questions.</h2>
+          <h2>Helpful answers before you stop by.</h2>
         </div>
         <div className="faq-list">
           {site.faqs.map((faq) => (
