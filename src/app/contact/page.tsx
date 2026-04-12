@@ -50,7 +50,7 @@ export default function ContactPage() {
               className="map-card-badge"
             />
             <p className="eyebrow">Map And Directions</p>
-            <h2>Open our location in Google Maps.</h2>
+            <h2>Find us in Sunnyvale.</h2>
             <div className="map-frame">
               <iframe
                 title="S-Tech Auto Repair map"
