@@ -99,7 +99,7 @@ export const site = {
     {
       question: "Can I bring my car in without an appointment?",
       answer:
-        "The current business messaging says online booking is available and drive-ins are welcome, so the site is designed to support both quick calls and planned visits.",
+        "Yes. You’re welcome to stop by between 8AM and 5PM. If the office door is locked when you arrive, just give us a call and someone will meet you there within minutes. You can also call ahead if you’d like to schedule a time.",
     },
     {
       question: "Do you help with check engine light and emissions issues?",
