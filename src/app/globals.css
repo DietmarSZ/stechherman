@@ -37,6 +37,31 @@ a {
   text-decoration: none;
 }
 
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 100;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-sm);
+  background: var(--black-bar);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent-deep);
+  outline-offset: 3px;
+}
+
+#main-content:focus {
+  outline: none;
+}
+
 .site-frame {
   background: #ffffff;
   padding-bottom: 2rem;
@@ -430,6 +455,17 @@ span {
 
 .button:hover {
   transform: translateY(-1px);
+}
+
+.button:focus-visible,
+.site-nav a:focus-visible,
+.footer-links a:focus-visible,
+.brand-mark:focus-visible,
+.video-frame:focus-visible,
+.inline-phone-link:focus-visible,
+.phone-modal-close:focus-visible {
+  outline: 3px solid var(--accent-deep);
+  outline-offset: 4px;
 }
 
 .button-primary {

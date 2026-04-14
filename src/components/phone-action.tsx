@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type PhoneActionProps = {
   className?: string;
@@ -23,6 +23,35 @@ function shouldUseDirectCall() {
 export function PhoneAction({ className, label, phone, phoneHref }: PhoneActionProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [copied, setCopied] = useState(false);
+  const triggerRef = useRef<HTMLButtonElement | null>(null);
+  const copyButtonRef = useRef<HTMLButtonElement | null>(null);
+  const wasOpenRef = useRef(false);
+
+  useEffect(() => {
+    if (!isOpen) {
+      if (wasOpenRef.current) {
+        triggerRef.current?.focus();
+      }
+
+      wasOpenRef.current = false;
+      return;
+    }
+
+    wasOpenRef.current = true;
+    copyButtonRef.current?.focus();
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setIsOpen(false);
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isOpen]);
 
   function handleOpen() {
     if (shouldUseDirectCall()) {
@@ -41,7 +70,12 @@ export function PhoneAction({ className, label, phone, phoneHref }: PhoneActionP
 
   return (
     <>
-      <button className={className} type="button" onClick={handleOpen}>
+      <button
+        ref={triggerRef}
+        className={className}
+        type="button"
+        onClick={handleOpen}
+      >
         {label}
       </button>
 
@@ -61,7 +95,12 @@ export function PhoneAction({ className, label, phone, phoneHref }: PhoneActionP
               number below or continue anyway.
             </p>
             <div className="phone-modal-actions">
-              <button className="button button-primary" type="button" onClick={handleCopy}>
+              <button
+                ref={copyButtonRef}
+                className="button button-primary"
+                type="button"
+                onClick={handleCopy}
+              >
                 {copied ? "Copied" : "Copy Number"}
               </button>
               <a className="button button-secondary" href={phoneHref}>

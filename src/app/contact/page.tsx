@@ -113,6 +113,7 @@ export default function ContactPage() {
               href="https://www.google.com/maps/search/?api=1&query=1011+E.+El+Camino+Real,+Sunnyvale,+CA+94087"
               target="_blank"
               rel="noreferrer"
+              aria-label="Open S-Tech Auto Repair directions in Google Maps (opens in a new tab)"
             >
               Open In Google Maps
             </Link>
@@ -127,6 +128,7 @@ export default function ContactPage() {
             href="https://youtu.be/l6bIdxIBYMU"
             target="_blank"
             rel="noreferrer"
+            aria-label="Watch the S-Tech Auto Repair arrival video on YouTube (opens in a new tab)"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img

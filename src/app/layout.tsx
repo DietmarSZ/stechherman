@@ -62,6 +62,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${headingFont.variable} ${bodyFont.variable}`}>
+        <a className="skip-link" href="#main-content">
+          Skip to main content
+        </a>
         <div className="site-frame">
           <script
             type="application/ld+json"
@@ -76,7 +79,7 @@ export default function RootLayout({
               </div>
             </div>
             <header className="site-header">
-              <Link className="brand-mark" href="/">
+              <Link className="brand-mark" href="/" aria-label="S-Tech Auto Repair home">
                 <Image
                   src="/images/logo-square.png"
                   alt="S-Tech Auto Repair logo"
@@ -95,7 +98,9 @@ export default function RootLayout({
             </header>
           </div>
 
-          {children}
+          <div id="main-content" tabIndex={-1}>
+            {children}
+          </div>
 
           <footer className="site-footer">
             <div>
