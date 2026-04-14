@@ -8,6 +8,7 @@ type FormState = {
   date: string;
   time: string;
   firstName: string;
+  lastName: string;
   phone: string;
   email: string;
   vehicleYear: string;
@@ -34,6 +35,7 @@ const INITIAL_FORM_STATE: FormState = {
   date: "",
   time: "",
   firstName: "",
+  lastName: "",
   phone: "",
   email: "",
   vehicleYear: "",
@@ -121,11 +123,13 @@ function buildMailtoHref(form: FormState, formattedDate: string, formattedTime: 
     `Service: ${form.service}`,
     `Requested date: ${formattedDate}`,
     `Requested time: ${formattedTime}`,
-    `First name: ${form.firstName}`,
-    `Phone: ${form.phone || "Not provided"}`,
-    `Email: ${form.email || "Not provided"}`,
+    `Name: ${form.firstName} ${form.lastName}`,
+    `Phone: ${form.phone}`,
+    `Email: ${form.email}`,
     `Vehicle: ${form.vehicleYear} ${form.vehicleMake} ${form.vehicleModel}`,
     `Notes: ${form.notes || "None provided"}`,
+    "",
+    "I understand this requested time is tentative until confirmed by the shop.",
   ].join("\n");
 
   return `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
@@ -136,9 +140,9 @@ function buildGoogleCalendarHref(form: FormState, formattedDate: string, formatt
   const end = new Date(start.getTime() + APPOINTMENT_DURATION_MINUTES * 60 * 1000);
   const title = `Tentative S-Tech appointment: ${form.service}`;
   const details = [
-    "This appointment time was booked through the S-Tech Auto Repair website.",
+    "This is a requested appointment time with S-Tech Auto Repair and is not confirmed until the shop responds.",
     "",
-    `Customer: ${form.firstName}`,
+    `Requested by: ${form.firstName} ${form.lastName}`,
     `Vehicle: ${form.vehicleYear} ${form.vehicleMake} ${form.vehicleModel}`,
     `Requested time: ${formattedDate} at ${formattedTime}`,
     `Notes: ${form.notes || "None provided"}`,
@@ -159,11 +163,11 @@ function buildIcsContent(form: FormState, formattedDate: string, formattedTime: 
   const start = toCalendarDate(form.date, form.time);
   const end = new Date(start.getTime() + APPOINTMENT_DURATION_MINUTES * 60 * 1000);
   const description = [
-    "This appointment time was booked through the S-Tech Auto Repair website.",
+    "This is a requested appointment time with S-Tech Auto Repair and is not confirmed until the shop responds.",
     "",
-    `Customer: ${form.firstName}`,
-    `Phone: ${form.phone || "Not provided"}`,
-    `Email: ${form.email || "Not provided"}`,
+    `Requested by: ${form.firstName} ${form.lastName}`,
+    `Phone: ${form.phone}`,
+    `Email: ${form.email}`,
     `Vehicle: ${form.vehicleYear} ${form.vehicleMake} ${form.vehicleModel}`,
     `Requested time: ${formattedDate} at ${formattedTime}`,
     `Notes: ${form.notes || "None provided"}`,
@@ -212,13 +216,8 @@ export function AppointmentRequestForm() {
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    if (!formState.phone && !formState.email) {
-      setError("Please give S-Tech either a mobile number or an email so the shop can reach you about your appointment.");
-      return;
-    }
-
     if (isWeekend(formState.date)) {
-      setError("Please choose a weekday appointment time. S-Tech scheduling is Monday through Friday.");
+      setError("Please choose a weekday appointment request. S-Tech scheduling is Monday through Friday.");
       return;
     }
 
@@ -253,8 +252,8 @@ export function AppointmentRequestForm() {
         <p className="eyebrow">Request Appointment</p>
         <h2>Choose a service, date, and time that works for you.</h2>
         <p>
-          Keep it simple: first name, one contact method, your vehicle, and the service you need.
-          No last name or VIN required.
+          Use this form to send S-Tech a requested appointment time during business hours. Your
+          requested slot is tentative until the shop confirms it.
         </p>
 
         <form className="appointment-form" onSubmit={handleSubmit}>
@@ -309,13 +308,14 @@ export function AppointmentRequestForm() {
             </label>
 
             <label className="field">
-              <span>Mobile number</span>
+              <span>Phone</span>
               <input
                 type="tel"
                 name="phone"
                 autoComplete="tel"
                 value={formState.phone}
                 onChange={(event) => updateField("phone", event.target.value)}
+                required
               />
             </label>
 
@@ -332,6 +332,18 @@ export function AppointmentRequestForm() {
             </label>
 
             <label className="field">
+              <span>Last name</span>
+              <input
+                type="text"
+                name="lastName"
+                autoComplete="family-name"
+                value={formState.lastName}
+                onChange={(event) => updateField("lastName", event.target.value)}
+                required
+              />
+            </label>
+
+            <label className="field field-wide">
               <span>Email</span>
               <input
                 type="email"
@@ -339,6 +351,7 @@ export function AppointmentRequestForm() {
                 autoComplete="email"
                 value={formState.email}
                 onChange={(event) => updateField("email", event.target.value)}
+                required
               />
             </label>
 
@@ -390,8 +403,7 @@ export function AppointmentRequestForm() {
           </div>
 
           <p className="appointment-caption">
-            Instant booking hours are Monday through Friday, 8AM to 5PM Pacific time. Add either a
-            mobile number or an email so the shop has one reliable contact method.
+            Scheduling requests are available Monday through Friday, 8AM to 5PM Pacific time.
           </p>
 
           {error ? (
@@ -408,28 +420,29 @@ export function AppointmentRequestForm() {
 
       <article className="panel appointment-sidebar">
         <p className="eyebrow">How It Works</p>
-        <h2>Book online now with the minimum info the shop actually needs.</h2>
+        <h2>Book online now, then send the request in a couple of taps.</h2>
         <ul className="appointment-steps">
           <li>Pick a preferred service, weekday, and time within shop hours.</li>
-          <li>Enter your first name, one contact method, and your vehicle year, make, and model.</li>
-          <li>Save the appointment to Google Calendar, Apple Calendar, or Outlook right away.</li>
+          <li>Enter your contact and vehicle details so the team has context before reaching out.</li>
+          <li>Use the built request actions to email the shop and save the tentative slot to your calendar.</li>
         </ul>
         <p>
-          This keeps scheduling easy for customers without asking for last names, VINs, or anything
-          extra the shop does not need to hold a time.
+          Walk-ins are still welcome, but this gives customers an easy online path to claim a time
+          before the day gets away from them.
         </p>
       </article>
 
       {submission ? (
         <article className="panel appointment-summary">
           <p className="eyebrow">Ready To Send</p>
-          <h2>Your appointment details are prepared.</h2>
+          <h2>Your requested appointment time is prepared.</h2>
           <p>
             {submission.firstName}, your request for <strong>{submission.service}</strong> is set
             for <strong>{submission.formattedDate}</strong> at <strong>{submission.formattedTime}</strong>.
           </p>
           <p>
-            Send it to the shop now and add the time to your calendar so it stays on your day.
+            This time is still tentative until S-Tech confirms it, but you can send the request now
+            and add the hold to your calendar.
           </p>
           <div className="appointment-actions">
             <a className="button button-primary" href={submission.mailtoHref}>
