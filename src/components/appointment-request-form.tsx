@@ -62,7 +62,7 @@ function addDays(date: Date, days: number) {
 function getTimeSlots() {
   const slots: Array<{ value: string; label: string }> = [];
 
-  for (let minutes = 8 * 60; minutes <= 16 * 60; minutes += SLOT_INTERVAL_MINUTES) {
+  for (let minutes = 8 * 60; minutes <= 16 * 60 + 30; minutes += SLOT_INTERVAL_MINUTES) {
     const hour = Math.floor(minutes / 60);
     const minute = minutes % 60;
     const value = `${String(hour).padStart(2, "0")}:${String(minute).padStart(2, "0")}`;
