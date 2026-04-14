@@ -166,18 +166,14 @@ export default function ContactPage() {
 
         <article className="panel">
           <p className="eyebrow">Need service help?</p>
-          <h2>Book online, call, or stop by.</h2>
+          <h2>Drive in or reach out before your visit.</h2>
           <p>
-            If you want a preferred weekday time, request it online first. If you&apos;d rather talk
-            it through, call the shop, and if you&apos;re already nearby, feel free to stop in during
-            business hours.
+            We can keep building this section into a stronger booking flow, but this version already
+            gives customers the core information they need to find the shop and get in touch quickly.
           </p>
           <div className="cta-row">
-            <Link className="button button-primary" href="/schedule">
-              Request Appointment
-            </Link>
             <PhoneAction
-              className="button button-secondary"
+              className="button button-primary"
               label="Call now"
               phone={site.phone}
               phoneHref={site.phoneHref}

@@ -119,7 +119,6 @@ export default function RootLayout({
             <div className="footer-links">
               <Link href="/about">About</Link>
               <Link href="/services">Services</Link>
-              <Link href="/schedule">Schedule</Link>
               <Link href="/contact">Contact</Link>
             </div>
             <div>

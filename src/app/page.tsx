@@ -198,15 +198,12 @@ export default function HomePage() {
 
       <section className="section final-cta cta-banner">
         <div>
-          <p className="eyebrow">Book Service Your Way</p>
-          <h2>Book online, call the shop, or stop by when it works for you.</h2>
+          <p className="eyebrow">Drive In Or Call Now</p>
+          <h2>No appointment necessary. Book by phone today or stop by the shop.</h2>
         </div>
         <div className="cta-row">
-          <Link className="button button-primary" href="/schedule">
-            Book Online
-          </Link>
           <PhoneAction
-            className="button button-secondary"
+            className="button button-primary"
             label={`Call ${site.phone}`}
             phone={site.phone}
             phoneHref={site.phoneHref}
