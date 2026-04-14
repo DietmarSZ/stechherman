@@ -56,7 +56,7 @@ export const site = {
     "Fast service",
     "Quality repair",
     "Trained technicians",
-    "No appointment needed",
+    "Online scheduling available",
     "Dealership style amenities",
   ],
   services: [
@@ -110,7 +110,7 @@ export const site = {
     {
       question: "Can I bring my car in without an appointment?",
       answer:
-        "Yes. You’re welcome to stop by between 8AM and 5PM. If the office door is locked when you arrive, just give us a call and someone will meet you there within minutes. You can also call ahead if you’d like to schedule a time.",
+        "Yes. Walk-ins are welcome between 8AM and 5PM. If the office door is locked when you arrive, just give us a call and someone will meet you there within minutes. If you’d rather plan ahead, you can also request an appointment online or call ahead.",
     },
     {
       question: "Do you help with check engine light and emissions issues?",
