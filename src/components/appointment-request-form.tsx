@@ -17,9 +17,10 @@ type FormState = {
 };
 
 type SubmissionState = FormState & {
+  appointmentId: number | null;
+  status: string;
   formattedDate: string;
   formattedTime: string;
-  mailtoHref: string;
   googleCalendarHref: string;
   icsHref: string;
 };
@@ -66,11 +67,10 @@ function getTimeSlots() {
     const hour = Math.floor(minutes / 60);
     const minute = minutes % 60;
     const value = `${String(hour).padStart(2, "0")}:${String(minute).padStart(2, "0")}`;
-    const label = new Intl.DateTimeFormat("en-US", {
-      hour: "numeric",
-      minute: "2-digit",
-      timeZone: BUSINESS_TIME_ZONE,
-    }).format(new Date(Date.UTC(2026, 0, 1, hour, minute)));
+    const labelHour = hour % 12 || 12;
+    const labelMinute = String(minute).padStart(2, "0");
+    const meridiem = hour >= 12 ? "PM" : "AM";
+    const label = `${labelHour}:${labelMinute} ${meridiem}`;
 
     slots.push({ value, label });
   }
@@ -96,11 +96,10 @@ function getFormattedDate(dateValue: string) {
 
 function getFormattedTime(timeValue: string) {
   const [hours, minutes] = timeValue.split(":").map(Number);
-  return new Intl.DateTimeFormat("en-US", {
-    hour: "numeric",
-    minute: "2-digit",
-    timeZone: BUSINESS_TIME_ZONE,
-  }).format(new Date(Date.UTC(2026, 0, 1, hours, minutes)));
+  const labelHour = hours % 12 || 12;
+  const labelMinute = String(minutes).padStart(2, "0");
+  const meridiem = hours >= 12 ? "PM" : "AM";
+  return `${labelHour}:${labelMinute} ${meridiem}`;
 }
 
 function toCalendarDate(dateValue: string, timeValue: string) {
@@ -109,26 +108,6 @@ function toCalendarDate(dateValue: string, timeValue: string) {
 
 function toUtcCalendarStamp(date: Date) {
   return date.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}Z$/, "Z");
-}
-
-function buildMailtoHref(form: FormState, formattedDate: string, formattedTime: string) {
-  const subject = `Appointment request: ${form.service} on ${formattedDate} at ${formattedTime}`;
-  const body = [
-    "Hello S-Tech Auto Repair,",
-    "",
-    "I'd like to request an appointment with the following details:",
-    "",
-    `Service: ${form.service}`,
-    `Requested date: ${formattedDate}`,
-    `Requested time: ${formattedTime}`,
-    `First name: ${form.firstName}`,
-    `Phone: ${form.phone || "Not provided"}`,
-    `Email: ${form.email || "Not provided"}`,
-    `Vehicle: ${form.vehicleYear} ${form.vehicleMake} ${form.vehicleModel}`,
-    `Notes: ${form.notes || "None provided"}`,
-  ].join("\n");
-
-  return `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
 function buildGoogleCalendarHref(form: FormState, formattedDate: string, formattedTime: string) {
@@ -192,6 +171,7 @@ function buildIcsContent(form: FormState, formattedDate: string, formattedTime: 
 export function AppointmentRequestForm() {
   const [formState, setFormState] = useState<FormState>(INITIAL_FORM_STATE);
   const [error, setError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submission, setSubmission] = useState<SubmissionState | null>(null);
 
   const minDate = formatDateForInput(new Date());
@@ -209,7 +189,7 @@ export function AppointmentRequestForm() {
     setFormState((current) => ({ ...current, [field]: value }));
   }
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     if (!formState.phone && !formState.email) {
@@ -223,28 +203,60 @@ export function AppointmentRequestForm() {
     }
 
     setError("");
+    setIsSubmitting(true);
 
+    const nextSubmissionBase = { ...formState };
     const formattedDate = getFormattedDate(formState.date);
     const formattedTime = getFormattedTime(formState.time);
-    const mailtoHref = buildMailtoHref(formState, formattedDate, formattedTime);
     const googleCalendarHref = buildGoogleCalendarHref(formState, formattedDate, formattedTime);
     const icsContent = buildIcsContent(formState, formattedDate, formattedTime);
     const icsHref = URL.createObjectURL(new Blob([icsContent], { type: "text/calendar" }));
 
-    setSubmission((current) => {
-      if (current?.icsHref) {
-        URL.revokeObjectURL(current.icsHref);
+    try {
+      const response = await fetch("/api/appointment-request", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(nextSubmissionBase),
+      });
+
+      const result = (await response.json().catch(() => null)) as
+        | { appointmentId?: number | null; error?: string; status?: string }
+        | null;
+
+      if (!response.ok) {
+        URL.revokeObjectURL(icsHref);
+        setError(
+          result?.error ||
+            "We could not save your appointment right now. Please call S-Tech so the shop can help you directly.",
+        );
+        return;
       }
 
-      return {
-        ...formState,
-        formattedDate,
-        formattedTime,
-        mailtoHref,
-        googleCalendarHref,
-        icsHref,
-      };
-    });
+      setSubmission((current) => {
+        if (current?.icsHref) {
+          URL.revokeObjectURL(current.icsHref);
+        }
+
+        return {
+          ...nextSubmissionBase,
+          appointmentId: result?.appointmentId ?? null,
+          status: result?.status ?? "Appt made",
+          formattedDate,
+          formattedTime,
+          googleCalendarHref,
+          icsHref,
+        };
+      });
+
+      setFormState({ ...INITIAL_FORM_STATE });
+    } catch {
+      URL.revokeObjectURL(icsHref);
+      setError("We could not save your appointment right now. Please call S-Tech so the shop can help you directly.");
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -308,7 +320,7 @@ export function AppointmentRequestForm() {
               </select>
             </label>
 
-            <label className="field">
+            <label className="field field-wide">
               <span>Mobile number</span>
               <input
                 type="tel"
@@ -390,7 +402,7 @@ export function AppointmentRequestForm() {
           </div>
 
           <p className="appointment-caption">
-            Instant booking hours are Monday through Friday, 8AM to 5PM Pacific time. Add either a
+            Instant booking hours are Monday through Friday, 8AM to 4PM Pacific time. Add either a
             mobile number or an email so the shop has one reliable contact method.
           </p>
 
@@ -400,8 +412,8 @@ export function AppointmentRequestForm() {
             </p>
           ) : null}
 
-          <button type="submit" className="button button-primary">
-            Build My Appointment Request
+          <button type="submit" className="button button-primary" disabled={isSubmitting}>
+            {isSubmitting ? "Sending Appointment Request..." : "Set My Appointment Request"}
           </button>
         </form>
       </article>
@@ -412,6 +424,7 @@ export function AppointmentRequestForm() {
         <ul className="appointment-steps">
           <li>Pick a preferred service, weekday, and time within shop hours.</li>
           <li>Enter your first name, one contact method, and your vehicle year, make, and model.</li>
+          <li>Your request goes straight onto the S-Tech appointment schedule.</li>
           <li>Save the appointment to Google Calendar, Apple Calendar, or Outlook right away.</li>
         </ul>
         <p>
@@ -422,19 +435,18 @@ export function AppointmentRequestForm() {
 
       {submission ? (
         <article className="panel appointment-summary">
-          <p className="eyebrow">Ready To Send</p>
-          <h2>Your appointment details are prepared.</h2>
+          <p className="eyebrow">Appointment Requested</p>
+          <h2>Your appointment is now on the S-Tech schedule.</h2>
           <p>
             {submission.firstName}, your request for <strong>{submission.service}</strong> is set
             for <strong>{submission.formattedDate}</strong> at <strong>{submission.formattedTime}</strong>.
           </p>
           <p>
-            Send it to the shop now and add the time to your calendar so it stays on your day.
+            The shop has it marked as <strong>{submission.status}</strong>. You can still add the
+            time to your calendar right away.
           </p>
           <div className="appointment-actions">
-            <a className="button button-primary" href={submission.mailtoHref}>
-              Email Request To S-Tech
-            </a>
+            <p className="appointment-reference">Appointment #{submission.appointmentId ?? "Pending"}</p>
             <a
               className="button button-secondary"
               href={submission.googleCalendarHref}

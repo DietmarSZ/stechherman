@@ -839,6 +839,13 @@ span {
   gap: 0.85rem;
 }
 
+.appointment-reference {
+  margin: 0;
+  align-self: center;
+  color: var(--muted);
+  font-weight: 700;
+}
+
 .map-card {
   display: grid;
   gap: 1rem;
