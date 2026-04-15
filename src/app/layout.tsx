@@ -132,6 +132,14 @@ export default function RootLayout({
               <Link className="footer-privacy-link" href="/privacy-policy">
                 Privacy Policy
               </Link>
+              <a
+                className="footer-privacy-link"
+                href="https://www.p65warnings.ca.gov/?_cl=5Lwr9Zfm2u1IpqQdCBmwpWGH"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Pro65 Warning
+              </a>
             </div>
           </footer>
           <Analytics />
