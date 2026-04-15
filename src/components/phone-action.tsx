@@ -14,10 +14,7 @@ function shouldUseDirectCall() {
     return false;
   }
 
-  const coarsePointer = window.matchMedia("(pointer: coarse)").matches;
-  const mobileAgent = /Android|iPhone|iPad|iPod/i.test(window.navigator.userAgent);
-
-  return coarsePointer || mobileAgent;
+  return /Android|iPhone|iPod/i.test(window.navigator.userAgent);
 }
 
 export function PhoneAction({ className, label, phone, phoneHref }: PhoneActionProps) {
