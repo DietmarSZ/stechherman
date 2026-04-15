@@ -129,6 +129,9 @@ export default function RootLayout({
                 phone={site.phone}
                 phoneHref={site.phoneHref}
               />
+              <Link className="footer-privacy-link" href="/privacy-policy">
+                Privacy Policy
+              </Link>
             </div>
           </footer>
           <Analytics />

@@ -207,6 +207,22 @@ main {
   color: var(--accent-deep);
 }
 
+.footer-phone {
+  display: inline-flex;
+}
+
+.footer-privacy-link {
+  display: inline-block;
+  margin-left: 1rem;
+  color: var(--muted);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.footer-privacy-link:hover {
+  color: var(--accent-deep);
+}
+
 .utility-content p,
 .utility-phone,
 .header-phone {
@@ -931,6 +947,102 @@ span {
   margin-bottom: 0.5rem;
 }
 
+.privacy-page {
+  gap: 1.4rem;
+}
+
+.privacy-hero {
+  gap: 1rem;
+}
+
+.privacy-summary {
+  border: 1px solid rgba(34, 32, 28, 0.12);
+  border-radius: 18px;
+  background: #fff8f3;
+  padding: 1rem 1.15rem;
+}
+
+.privacy-summary p,
+.privacy-pill,
+.privacy-contact-card p {
+  margin: 0;
+}
+
+.privacy-pill {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(34, 32, 28, 0.12);
+  border-radius: 999px;
+  background: #ffffff;
+  padding: 0.7rem 1rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 700;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.05);
+}
+
+.privacy-nav,
+.privacy-article {
+  display: grid;
+  gap: 1rem;
+}
+
+.privacy-nav-grid {
+  display: grid;
+  gap: 0.6rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.privacy-nav-grid a {
+  border-radius: var(--radius-md);
+  padding: 0.75rem 0.9rem;
+  color: var(--muted);
+  font-weight: 500;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.privacy-nav-grid a:hover {
+  background: var(--accent-soft);
+  color: var(--ink);
+}
+
+.privacy-article > p,
+.privacy-section > p,
+.privacy-section li {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.privacy-section {
+  scroll-margin-top: 7rem;
+}
+
+.privacy-section + .privacy-section {
+  border-top: 1px solid rgba(34, 32, 28, 0.08);
+  padding-top: 1.35rem;
+}
+
+.privacy-section ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.privacy-contact-card {
+  display: grid;
+  gap: 0.75rem;
+  border: 1px solid rgba(34, 32, 28, 0.12);
+  border-radius: 18px;
+  background: #fff8f3;
+  padding: 1.2rem;
+}
+
+.privacy-contact-name {
+  color: var(--ink);
+  font-weight: 700;
+}
+
 .phone-modal-overlay {
   position: fixed;
   inset: 0;
@@ -1008,6 +1120,11 @@ span {
     text-align: left;
   }
 
+  .footer-privacy-link {
+    margin-left: 0;
+    margin-top: 0.65rem;
+  }
+
   .hero-copy,
   .inner-hero {
     padding: 2.2rem;
@@ -1051,6 +1168,10 @@ span {
 
   .top-intro-copy {
     padding: 1.35rem;
+  }
+
+  .privacy-nav-grid {
+    grid-template-columns: 1fr;
   }
 
   .top-intro-signals {
