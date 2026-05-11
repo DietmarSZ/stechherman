@@ -1,6 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Metadata } from "next";
-import { getBreadcrumbSchema, getServicesPageSchema, site } from "@/lib/site";
+import { getBreadcrumbSchema, getServicesPageSchema, servicePages, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -36,7 +37,7 @@ export default function ServicesPage() {
       </header>
 
       <section className="service-grid">
-        {site.services.map((service) => (
+        {servicePages.map((service) => (
           <article key={service.slug} id={service.slug} className="service-card">
             <div className="service-media">
               <Image
@@ -47,16 +48,27 @@ export default function ServicesPage() {
                 sizes="(max-width: 960px) 100vw, 50vw"
               />
             </div>
-            <p className="service-kicker">{service.kicker}</p>
+            <p className="service-kicker">{service.eyebrow}</p>
             <h2>{service.title}</h2>
             <p>{service.summary}</p>
             <ul>
-              {service.bullets.map((bullet) => (
+              {service.highlights.map((bullet) => (
                 <li key={bullet}>{bullet}</li>
               ))}
             </ul>
+            <Link className="service-card-link" href={`/services/${service.slug}`}>
+              Learn More
+            </Link>
           </article>
         ))}
+      </section>
+
+      <section className="section">
+        <article className="panel panel-large">
+          <p className="eyebrow">Service Area</p>
+          <h2>{site.nearbyMarketHeading}</h2>
+          <p>{site.nearbyMarketNote}</p>
+        </article>
       </section>
     </main>
   );

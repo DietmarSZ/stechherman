@@ -604,7 +604,8 @@ span {
 .service-card > h2,
 .service-card > h3,
 .service-card > p,
-.service-card > ul {
+.service-card > ul,
+.service-card > .service-card-link {
   padding-left: 2rem;
   padding-right: 2rem;
 }
@@ -618,6 +619,117 @@ span {
 
 .service-image {
   object-fit: cover;
+}
+
+.service-card-link {
+  display: inline-flex;
+  margin-top: 0.6rem;
+  color: var(--accent-deep);
+  font-weight: 700;
+}
+
+.service-detail-page {
+  gap: 1.4rem;
+}
+
+.service-detail-hero,
+.service-detail-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.78fr);
+  gap: 1rem;
+}
+
+.service-detail-hero {
+  align-items: center;
+}
+
+.service-detail-intro {
+  display: grid;
+  align-content: center;
+}
+
+.service-detail-logo {
+  width: 112px;
+  height: 112px;
+  margin-bottom: 1rem;
+}
+
+.service-detail-title {
+  max-width: 24ch;
+  font-family: var(--font-body), "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  font-size: clamp(1.75rem, 2.8vw, 2.35rem);
+  line-height: 1.16;
+  font-weight: 500;
+  text-transform: none;
+}
+
+.service-detail-media {
+  position: relative;
+  min-height: 332px;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: #000000;
+}
+
+.service-detail-hero .lede {
+  margin-top: 0.7rem;
+  font-weight: 700;
+}
+
+.service-copy-panel,
+.service-sidebar {
+  display: grid;
+  gap: 1rem;
+}
+
+.service-location-card {
+  align-content: start;
+}
+
+.service-location-logo {
+  width: 112px;
+  height: 112px;
+  margin-bottom: 0.85rem;
+}
+
+.service-location-card h2 {
+  font-family: var(--font-body), "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  font-size: clamp(1.7rem, 2.4vw, 2.15rem);
+  line-height: 1.15;
+  font-weight: 500;
+}
+
+.service-copy-section {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.service-copy-section + .service-copy-section {
+  border-top: 1px solid var(--line);
+  padding-top: 1.2rem;
+}
+
+.service-copy-section p {
+  margin: 0;
+}
+
+.related-service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.related-service-card {
+  display: grid;
+  gap: 0.7rem;
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease;
+}
+
+.related-service-card:hover {
+  transform: translateY(-1px);
+  border-color: rgba(216, 111, 31, 0.36);
 }
 
 .contrast .service-card,
@@ -1085,6 +1197,9 @@ span {
   .intro-grid,
   .three-up,
   .service-grid,
+  .service-detail-hero,
+  .service-detail-grid,
+  .related-service-grid,
   .faq-list,
   .contact-grid,
   .split,

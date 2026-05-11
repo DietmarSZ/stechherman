@@ -1,7 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { PhoneAction } from "@/components/phone-action";
-import { getBusinessSchema, getCurrentOffers, getFaqSchema, getOfferFallbackMonth, site } from "@/lib/site";
+import {
+  getBusinessSchema,
+  getCurrentOffers,
+  getFaqSchema,
+  getOfferFallbackMonth,
+  servicePages,
+  site,
+} from "@/lib/site";
 
 export const revalidate = 3600;
 
@@ -94,7 +101,7 @@ export default function HomePage() {
           <h2>From routine maintenance to more involved repairs, we help drivers keep their vehicles safe, reliable, and ready for the road.</h2>
         </div>
         <div className="service-grid">
-          {site.services.map((service) => (
+          {servicePages.map((service) => (
             <article key={service.slug} className="service-card">
               <div className="service-media">
                 <Image
@@ -105,14 +112,17 @@ export default function HomePage() {
                   sizes="(max-width: 960px) 100vw, 50vw"
                 />
               </div>
-              <p className="service-kicker">{service.kicker}</p>
+              <p className="service-kicker">{service.eyebrow}</p>
               <h3>{service.title}</h3>
               <p>{service.summary}</p>
               <ul>
-                {service.bullets.map((bullet) => (
+                {service.highlights.map((bullet) => (
                   <li key={bullet}>{bullet}</li>
                 ))}
               </ul>
+              <Link className="service-card-link" href={`/services/${service.slug}`}>
+                Learn More
+              </Link>
             </article>
           ))}
         </div>
@@ -120,12 +130,9 @@ export default function HomePage() {
 
       <section className="section split">
         <article className="panel panel-large">
-          <p className="eyebrow">Trust Starts Here</p>
-          <h2>From your first visit, you should feel confident in the service you&apos;re getting.</h2>
-          <p>
-            We focus on clear communication, dependable workmanship, and a customer experience that
-            feels honest, straightforward, and professional.
-          </p>
+          <p className="eyebrow">Service Area</p>
+          <h2>{site.nearbyMarketHeading}</h2>
+          <p>{site.nearbyMarketNote}</p>
         </article>
         <article className="panel panel-accent">
           <p className="eyebrow">Service That Fits Your Day</p>
