@@ -163,11 +163,12 @@ main {
 .site-header {
   position: relative;
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  min-height: 174px;
+  grid-template-columns: 190px minmax(520px, 1fr) auto;
+  min-height: 150px;
   align-items: center;
-  gap: 1.4rem;
-  padding: 1.35rem 0;
+  column-gap: clamp(2.2rem, 4vw, 4rem);
+  row-gap: 1rem;
+  padding: 1rem 0;
   border-bottom: 0;
 }
 
@@ -194,10 +195,28 @@ main {
 }
 
 .brand-mark img {
-  width: 188px;
+  width: 170px;
   height: auto;
   filter: drop-shadow(0 0 0.35rem rgba(246, 141, 63, 0.75))
     drop-shadow(0 16px 30px rgba(0, 0, 0, 0.34));
+}
+
+.header-mission {
+  margin: 0;
+  justify-self: center;
+  transform: translateY(-0.35rem);
+  width: min(100%, 58ch);
+  color: #ffffff;
+  font-family: var(--font-heading), "Helvetica Neue", "Arial Narrow", Arial, sans-serif;
+  font-size: clamp(1.5rem, 1.78vw, 1.95rem);
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+.header-right {
+  display: grid;
+  justify-items: end;
+  gap: 1rem;
 }
 
 .site-nav,
@@ -210,9 +229,11 @@ main {
 .site-nav {
   position: static;
   transform: none;
-  justify-self: center;
+  justify-self: end;
   align-items: center;
   gap: clamp(0.8rem, 1.4vw, 1.25rem);
+  padding: 0.55rem 0.75rem;
+  background: rgba(8, 8, 8, 0.42);
 }
 
 .footer-links {
@@ -235,7 +256,7 @@ main {
   padding: 0.4rem 0;
   color: #ffffff;
   font-family: var(--font-heading), "Helvetica Neue", "Arial Narrow", Arial, sans-serif;
-  font-size: clamp(1.05rem, 1.35vw, 1.32rem);
+  font-size: clamp(1rem, 1.15vw, 1.18rem);
   text-transform: uppercase;
 }
 
@@ -270,6 +291,7 @@ main {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  justify-content: flex-end;
 }
 
 .header-phone,
@@ -277,7 +299,7 @@ main {
   min-height: 58px;
   border-radius: var(--radius-md);
   font-family: var(--font-heading), "Helvetica Neue", "Arial Narrow", Arial, sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.12rem;
   line-height: 1;
   text-transform: uppercase;
 }
@@ -307,7 +329,7 @@ main {
 .header-schedule {
   display: inline-flex;
   align-items: center;
-  max-width: 154px;
+  max-width: 148px;
   padding: 0.7rem 1rem;
   border: 2px solid var(--accent);
   color: #ffffff;
@@ -357,15 +379,15 @@ main {
   position: relative;
   display: inline-flex;
   align-items: center;
-  min-width: 226px;
-  max-width: 226px;
+  min-width: 214px;
+  max-width: 214px;
   min-height: 58px;
   padding: 0.7rem 1rem 0.7rem 4rem;
   border-radius: var(--radius-md);
   background: linear-gradient(180deg, #ff8f3b, #f36f12);
   color: #ffffff;
   font-family: var(--font-heading), "Helvetica Neue", "Arial Narrow", Arial, sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.12rem;
   line-height: 1;
   text-align: left;
   text-transform: uppercase;
@@ -1574,6 +1596,7 @@ span {
   .footer-links,
   .header-phone,
   .header-actions,
+  .header-right,
   .utility-content p,
   .utility-tagline,
   .utility-phone,
@@ -1582,6 +1605,17 @@ span {
     transform: none;
     justify-self: start;
     text-align: left;
+  }
+
+  .header-mission {
+    display: none;
+  }
+
+  .header-right {
+    display: grid;
+    justify-items: start;
+    gap: 1rem;
+    width: 100%;
   }
 
   .header-actions {
@@ -1691,8 +1725,13 @@ span {
 
   .brand-mark,
   .site-nav,
-  .header-actions {
+  .header-actions,
+  .header-right {
     justify-self: center;
+  }
+
+  .header-right {
+    justify-items: center;
   }
 
   .site-nav {

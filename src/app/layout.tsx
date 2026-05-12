@@ -88,17 +88,24 @@ export default function RootLayout({
                   priority
                 />
               </Link>
-              <SiteNav />
-              <div className="header-actions">
-                <PhoneAction
-                  className="header-phone"
-                  label={`${site.phone}\nCall Now`}
-                  phone={site.phone}
-                  phoneHref={site.phoneHref}
-                />
-                <Link className="header-schedule" href="/schedule">
-                  Schedule Service
-                </Link>
+              <p className="header-mission">
+                We&apos;re your neighborhood repair shop&#8212;powered by dealership-level tools,
+                training, and standards. Our goal is simple: make car care easier, more transparent
+                and genuinely better.
+              </p>
+              <div className="header-right">
+                <div className="header-actions">
+                  <PhoneAction
+                    className="header-phone"
+                    label={`${site.phone}\nCall Now`}
+                    phone={site.phone}
+                    phoneHref={site.phoneHref}
+                  />
+                  <Link className="header-schedule" href="/schedule">
+                    Schedule Service
+                  </Link>
+                </div>
+                <SiteNav />
               </div>
             </header>
           </div>

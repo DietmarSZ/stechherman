@@ -81,13 +81,6 @@ export default function HomePage() {
       <div className="hero-divider" aria-hidden="true" />
 
       <section className="section">
-        <div className="section-heading">
-          <h2>
-            We&apos;re your neighborhood repair shop&#8212;powered by dealership-level tools,
-            training, and standards. Our goal is simple: make car care easier, more transparent,
-            and genuinely better.
-          </h2>
-        </div>
         <div className="three-up">
           {proofPoints.map((point) => (
             <article key={point.title} className="panel">
