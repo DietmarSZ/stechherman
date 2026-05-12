@@ -1797,8 +1797,14 @@ span {
   }
 
   .top-intro-media {
+    order: -1;
     min-height: 0;
+    height: min(56vw, 220px);
     aspect-ratio: 16 / 9;
+  }
+
+  .top-offer-rotator {
+    min-height: 100%;
   }
 
   .top-offer-rotator-cta {
