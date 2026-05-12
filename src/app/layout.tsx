@@ -81,20 +81,25 @@ export default function RootLayout({
             <header className="site-header">
               <Link className="brand-mark" href="/" aria-label="S-Tech Auto Repair home">
                 <Image
-                  src="/images/logo-square.png"
+                  src="/images/logo-round-orange-high.png"
                   alt="S-Tech Auto Repair logo"
-                  width={217}
-                  height={104}
+                  width={2077}
+                  height={2127}
                   priority
                 />
               </Link>
               <SiteNav />
-              <PhoneAction
-                className="header-phone"
-                label={site.phone}
-                phone={site.phone}
-                phoneHref={site.phoneHref}
-              />
+              <div className="header-actions">
+                <PhoneAction
+                  className="header-phone"
+                  label={`${site.phone}\nCall Now`}
+                  phone={site.phone}
+                  phoneHref={site.phoneHref}
+                />
+                <Link className="header-schedule" href="/schedule">
+                  Schedule Service
+                </Link>
+              </div>
             </header>
           </div>
 
