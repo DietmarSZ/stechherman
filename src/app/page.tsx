@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { PhoneAction } from "@/components/phone-action";
+import { SpecialsRotator } from "@/components/specials-rotator";
 import {
   getBusinessSchema,
   getCurrentOffers,
@@ -30,10 +31,16 @@ const proofPoints = [
   },
 ];
 
+const offerDisplayOrder = ["Synthetic Oil Change", "Repair Savings", "Smog Certificate"];
+
 export default function HomePage() {
   const businessSchema = getBusinessSchema();
   const faqSchema = getFaqSchema();
   const activeOffers = getCurrentOffers();
+  const displayOffers = [...activeOffers].sort(
+    (firstOffer, secondOffer) =>
+      offerDisplayOrder.indexOf(firstOffer.title) - offerDisplayOrder.indexOf(secondOffer.title),
+  );
   const fallbackMonth = getOfferFallbackMonth();
 
   return (
@@ -49,9 +56,12 @@ export default function HomePage() {
 
       <section className="top-intro">
         <article className="top-intro-copy">
+          <span className="top-intro-brand">S-Tech Auto Repair</span>
+          <span className="top-intro-rule" aria-hidden="true" />
+          <span className="top-intro-offers">Offers</span>
           <p>
-            S-Tech Auto Repair offers inexpensive, efficient maintenance and repair services for your
-            Asian or domestic automobile.
+            <span>Inexpensive, efficient</span> maintenance and repair services for your{" "}
+            <span>Asian or domestic</span> automobile.
           </p>
         </article>
 
@@ -64,14 +74,7 @@ export default function HomePage() {
         </article>
 
         <div className="top-intro-media">
-          <Image
-            src="/images/service-wheel.jpg"
-            alt="Technician working on a wheel and tire assembly in the repair bay"
-            fill
-            priority
-            className="top-intro-image"
-            sizes="(max-width: 960px) 100vw, 33vw"
-          />
+          <SpecialsRotator offers={displayOffers} />
         </div>
       </section>
 
@@ -144,30 +147,31 @@ export default function HomePage() {
         </article>
       </section>
 
-      <section className="section">
+      <section className="section" id="current-specials">
         <div className="specials-heading">
           <div className="specials-bar">
             <span>Current Specials</span>
           </div>
           <h2>Featured service offers available right now at S-Tech Auto Repair.</h2>
         </div>
-        {activeOffers.length > 0 ? (
-          <div className="offer-grid">
-            {activeOffers.map((offer) => (
-              <article key={offer.title} className="offer-card">
+        {displayOffers.length > 0 ? (
+          <div className="offer-visual-grid">
+            {displayOffers.map((offer) => (
+              <Link
+                key={offer.title}
+                className="offer-visual-card"
+                href="/schedule"
+                aria-label={`Request an appointment for ${offer.title}: ${offer.price}. ${offer.description}`}
+              >
                 <Image
-                  src="/images/logo-square.png"
-                  alt="S-Tech Auto Repair logo"
-                  width={74}
-                  height={36}
-                  className="offer-logo"
+                  src={offer.image}
+                  alt={offer.imageAlt}
+                  width={1536}
+                  height={1024}
+                  className="offer-visual-image"
+                  sizes="(max-width: 640px) 100vw, 50vw"
                 />
-                <p className="service-kicker">Offer</p>
-                <h3>{offer.title}</h3>
-                <p className="offer-price">{offer.price}</p>
-                <p>{offer.description}</p>
-                <p className="offer-disclosure">{offer.disclosure}</p>
-              </article>
+              </Link>
             ))}
           </div>
         ) : (

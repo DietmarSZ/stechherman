@@ -1,9 +1,11 @@
-type Offer = {
+export type Offer = {
   title: string;
   price: string;
   description: string;
   disclosure: string;
   expiresOn: string;
+  image: string;
+  imageAlt: string;
 };
 
 export type ServicePage = {
@@ -155,6 +157,9 @@ export const site = {
       disclosure:
         "*Some vehicles may be higher. Shop fees, environmental fees, core charges, taxes, and other federal, state, or locally mandated fees are extra. Discount applied before fees/taxes. Limit 1 discount per transaction. Mention offer at arrival. Not applicable to all vehicles or circumstances. Offer expires 5/31/26",
       expiresOn: "2026-05-31",
+      image: "/images/special-synthetic-oil-change.png",
+      imageAlt:
+        "Limited time synthetic oil change offer for $89.95 including synthetic oil change and multi-point inspection.",
     },
     {
       title: "Smog Certificate",
@@ -163,6 +168,9 @@ export const site = {
       disclosure:
         "*Non-STAR certificate only. Certificate fee of $8.25 is additional. Shop fees, environmental fees, core charges, taxes, and other federal, state, or locally mandated fees are extra. Limit 1 discount per transaction. Mention offer at arrival. Not applicable to all vehicles or circumstances. Offer expires 5/31/26",
       expiresOn: "2026-05-31",
+      image: "/images/special-smog-certificate.png",
+      imageAlt:
+        "Limited time non-STAR smog certificate offer for $29.95 plus certificate fee.",
     },
     {
       title: "Repair Savings",
@@ -171,6 +179,9 @@ export const site = {
       disclosure:
         "*Discount applies to qualifying repairs and is capped at $200. Shop fees, environmental fees, core charges, taxes, and other federal, state, or locally mandated fees are extra. Limit 1 discount per transaction. Mention offer at arrival. Not applicable to all vehicles or circumstances. Offer expires 5/31/26",
       expiresOn: "2026-05-31",
+      image: "/images/special-repair-savings.png",
+      imageAlt:
+        "Limited time repair savings offer for 10 percent off qualifying repair work, capped at $200.",
     },
   ] satisfies Offer[],
 };
