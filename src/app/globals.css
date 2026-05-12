@@ -1622,6 +1622,30 @@ span {
   }
 }
 
+@media (min-width: 961px) and (max-width: 1240px) {
+  .top-intro {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 100%;
+    margin-inline: auto;
+  }
+
+  .top-intro-media {
+    grid-column: 1 / -1;
+    aspect-ratio: 16 / 7;
+  }
+
+  .top-intro-copy,
+  .top-intro-signals {
+    min-height: 320px;
+  }
+
+  .top-intro-copy p,
+  .top-intro-brand,
+  .top-intro-offers {
+    max-width: 22ch;
+  }
+}
+
 @media (max-width: 640px) {
   .utility-content,
   .site-header,
