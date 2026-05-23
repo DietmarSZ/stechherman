@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
+import { MemorialDayNotice } from "@/components/memorial-day-notice";
 import { PhoneAction } from "@/components/phone-action";
 import { getBreadcrumbSchema, site } from "@/lib/site";
 
@@ -149,6 +150,7 @@ export default function ContactPage() {
       <section className="contact-grid">
         <article className="panel">
           <p className="eyebrow">Working Hours And Night Drop</p>
+          <MemorialDayNotice />
           <h2>Monday to Friday</h2>
           <div className="hours">
             {site.hours.map((line) => (

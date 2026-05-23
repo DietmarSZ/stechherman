@@ -729,6 +729,31 @@ main {
   margin-bottom: 1rem;
 }
 
+.holiday-notice {
+  display: grid;
+  gap: 0.25rem;
+  margin: 0 0 1.15rem;
+  padding: 0.95rem 1rem;
+  border: 1px solid rgba(216, 111, 31, 0.24);
+  border-left: 5px solid var(--accent);
+  border-radius: var(--radius-md);
+  background: linear-gradient(180deg, #fff7f0, #ffffff);
+  box-shadow: 0 12px 26px rgba(216, 111, 31, 0.08);
+}
+
+.holiday-notice strong {
+  color: var(--ink);
+  font-family: var(--font-heading), "Helvetica Neue", "Arial Narrow", Arial, sans-serif;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.holiday-notice span {
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.35;
+}
+
 .eyebrow,
 .card-label,
 .service-kicker {
