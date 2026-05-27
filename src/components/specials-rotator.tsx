@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { CouponArt } from "@/components/coupon-art";
 import type { Offer } from "@/lib/site";
 
 type SpecialsRotatorProps = {
@@ -53,7 +52,16 @@ export function SpecialsRotator({ offers }: SpecialsRotatorProps) {
       onClick={scrollToSpecials}
       aria-label={`View all current specials, including ${activeOffer.title}: ${activeOffer.price}.`}
     >
-      <CouponArt offer={activeOffer} />
+      <Image
+        key={activeOffer.image}
+        src={activeOffer.image}
+        alt={activeOffer.imageAlt}
+        fill
+        priority
+        className="top-offer-rotator-image"
+        sizes="(max-width: 960px) 100vw, 33vw"
+      />
+      <span className="coupon-disclosure-overlay">{activeOffer.disclosure}</span>
       <span className="top-offer-rotator-cta">View all specials</span>
       {offers.length > 1 ? (
         <span className="top-offer-rotator-dots" aria-hidden="true">
