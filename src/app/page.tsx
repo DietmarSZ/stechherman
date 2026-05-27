@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { CouponArt } from "@/components/coupon-art";
 import { PhoneAction } from "@/components/phone-action";
 import { SpecialsRotator } from "@/components/specials-rotator";
 import {
@@ -156,14 +157,7 @@ export default function HomePage() {
                 href="/schedule"
                 aria-label={`Request an appointment for ${offer.title}: ${offer.price}. ${offer.description}`}
               >
-                <Image
-                  src={offer.image}
-                  alt={offer.imageAlt}
-                  width={1536}
-                  height={1024}
-                  className="offer-visual-image"
-                  sizes="(max-width: 640px) 100vw, 50vw"
-                />
+                <CouponArt offer={offer} />
               </Link>
             ))}
           </div>
