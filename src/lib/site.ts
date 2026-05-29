@@ -155,8 +155,8 @@ export const site = {
       price: "$89.95*",
       description: "Includes a synthetic oil change and multi-point inspection. Limit 5 quarts synthetic oil.",
       disclosure:
-        "*Some vehicles may be higher. Includes up to 5 quarts synthetic oil. Plus $2.17 environmental fee and applicable taxes. Limit 1 discount per transaction. Mention offer at arrival. Not applicable to all vehicles or circumstances. BAR Ard#89968. Offer expires 5/31/26",
-      expiresOn: "2026-05-31",
+        "*Some vehicles may be higher. Includes up to 5 quarts synthetic oil. Plus $2.17 environmental fee and applicable taxes. Limit 1 discount per transaction. Mention offer at arrival. Not applicable to all vehicles or circumstances. BAR Ard#89968. Offer expires 7/31/26",
+      expiresOn: "2026-07-31",
       image: "/images/special-synthetic-oil-change.png",
       imageAlt:
         "Limited time synthetic oil change offer for $89.95 including synthetic oil change and multi-point inspection.",
@@ -166,8 +166,8 @@ export const site = {
       price: "$29.95*",
       description: "Non-STAR smog certificate service, plus certificate fee and environmental fee.",
       disclosure:
-        "*Non-STAR certificate only. Certificate fee of $8.25 is additional. Plus $2.17 environmental fee and applicable taxes. Limit 1 discount per transaction. Mention offer at arrival. Not applicable to all vehicles or circumstances. BAR Ard#89968. Offer expires 5/31/26",
-      expiresOn: "2026-05-31",
+        "*Non-STAR certificate only. Certificate fee of $8.25 is additional. Plus $2.17 environmental fee and applicable taxes. Limit 1 discount per transaction. Mention offer at arrival. Not applicable to all vehicles or circumstances. BAR Ard#89968. Offer expires 7/31/26",
+      expiresOn: "2026-07-31",
       image: "/images/special-smog-certificate.png",
       imageAlt:
         "Limited time non-STAR smog certificate offer for $29.95 plus certificate fee.",
@@ -177,8 +177,8 @@ export const site = {
       price: "10% Off*",
       description: "Save on qualifying repair work at S-Tech Auto Repair.",
       disclosure:
-        "*Discount applies to qualifying repairs and is capped at $200. Plus $2.17 environmental fee and applicable taxes. Cannot be combined with other advertised specials or coupons. Limit 1 discount per transaction. Mention offer at arrival. Not applicable to all vehicles or circumstances. BAR Ard#89968. Offer expires 5/31/26",
-      expiresOn: "2026-05-31",
+        "*Discount applies to qualifying repairs and is capped at $200. Plus $2.17 environmental fee and applicable taxes. Cannot be combined with other advertised specials or coupons. Limit 1 discount per transaction. Mention offer at arrival. Not applicable to all vehicles or circumstances. BAR Ard#89968. Offer expires 7/31/26",
+      expiresOn: "2026-07-31",
       image: "/images/special-repair-savings.png",
       imageAlt:
         "Limited time repair savings offer for 10 percent off qualifying repair work, capped at $200.",
