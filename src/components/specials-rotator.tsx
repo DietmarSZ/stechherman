@@ -8,10 +8,6 @@ type SpecialsRotatorProps = {
   offers: Offer[];
 };
 
-function getOfferVisualClass(title: string) {
-  return title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-}
-
 export function SpecialsRotator({ offers }: SpecialsRotatorProps) {
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -52,7 +48,7 @@ export function SpecialsRotator({ offers }: SpecialsRotatorProps) {
   return (
     <button
       type="button"
-      className={`top-offer-rotator offer-visual-card-${getOfferVisualClass(activeOffer.title)}`}
+      className="top-offer-rotator"
       onClick={scrollToSpecials}
       aria-label={`View all current specials, including ${activeOffer.title}: ${activeOffer.price}.`}
     >
@@ -65,12 +61,6 @@ export function SpecialsRotator({ offers }: SpecialsRotatorProps) {
         className="top-offer-rotator-image"
         sizes="(max-width: 960px) 100vw, 33vw"
       />
-      {activeOffer.title !== "Repair Savings" ? (
-        <span className="coupon-price-overlay">{activeOffer.price}</span>
-      ) : null}
-      {activeOffer.title === "Synthetic Oil Change" ? (
-        <span className="coupon-detail-overlay">Includes tire rotation</span>
-      ) : null}
       <span className="coupon-disclosure-overlay">{activeOffer.disclosure}</span>
       <span className="top-offer-rotator-cta">View all specials</span>
       {offers.length > 1 ? (

@@ -1158,62 +1158,6 @@ span {
   text-align: center;
 }
 
-.coupon-price-overlay,
-.coupon-detail-overlay {
-  position: absolute;
-  z-index: 1;
-  font-family: var(--font-heading), "Helvetica Neue", "Arial Narrow", Arial, sans-serif;
-  line-height: 1;
-  text-transform: uppercase;
-  pointer-events: none;
-}
-
-.coupon-price-overlay {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: clamp(3.2rem, 8vw, 6rem);
-  text-shadow: 0 5px 12px rgba(0, 0, 0, 0.32);
-}
-
-.offer-visual-card-synthetic-oil-change .coupon-price-overlay {
-  left: 7%;
-  top: 51%;
-  width: 38%;
-  height: 21%;
-  transform: skew(-8deg);
-  background: linear-gradient(180deg, #ff8b32, #f36f12);
-  color: #ffffff;
-}
-
-.offer-visual-card-smog-certificate .coupon-price-overlay {
-  left: 19%;
-  top: 49%;
-  width: 36%;
-  height: 19%;
-  background: #111111;
-  color: #ffffff;
-  text-shadow:
-    -1px -1px 0 #f36f12,
-    1px -1px 0 #f36f12,
-    -1px 1px 0 #f36f12,
-    1px 1px 0 #f36f12,
-    0 5px 12px rgba(0, 0, 0, 0.35);
-}
-
-.offer-visual-card-synthetic-oil-change .coupon-detail-overlay {
-  right: 7%;
-  top: 58%;
-  max-width: 28%;
-  padding: 0.55rem 0.7rem;
-  border: 1px solid rgba(246, 141, 63, 0.8);
-  border-radius: var(--radius-sm);
-  background: rgba(8, 8, 8, 0.84);
-  color: #ffffff;
-  font-size: clamp(0.9rem, 1.35vw, 1.2rem);
-  text-align: left;
-}
-
 .top-offer-rotator-image {
   object-fit: contain;
 }
@@ -1222,18 +1166,6 @@ span {
   min-height: 15%;
   padding: 0.28rem 0.55rem;
   font-size: clamp(0.45rem, 0.65vw, 0.58rem);
-}
-
-.top-offer-rotator .coupon-price-overlay {
-  font-size: clamp(1.9rem, 5.2vw, 4rem);
-}
-
-.top-offer-rotator.offer-visual-card-synthetic-oil-change .coupon-detail-overlay {
-  right: 6%;
-  top: 58%;
-  max-width: 31%;
-  padding: 0.35rem 0.45rem;
-  font-size: clamp(0.52rem, 0.9vw, 0.78rem);
 }
 
 .offer-logo {
@@ -1977,32 +1909,10 @@ span {
     font-size: 0.54rem;
   }
 
-  .coupon-price-overlay {
-    font-size: clamp(2.4rem, 15vw, 4rem);
-  }
-
-  .offer-visual-card-synthetic-oil-change .coupon-detail-overlay {
-    right: 5%;
-    top: 57%;
-    max-width: 34%;
-    padding: 0.35rem 0.42rem;
-    font-size: 0.62rem;
-  }
-
   .top-offer-rotator .coupon-disclosure-overlay {
     min-height: 18%;
     padding: 0.22rem 0.35rem;
     font-size: 0.34rem;
-  }
-
-  .top-offer-rotator .coupon-price-overlay {
-    font-size: clamp(1.6rem, 10vw, 2.5rem);
-  }
-
-  .top-offer-rotator.offer-visual-card-synthetic-oil-change .coupon-detail-overlay {
-    top: 55%;
-    max-width: 36%;
-    font-size: 0.42rem;
   }
 
   .offer-fallback-card {
