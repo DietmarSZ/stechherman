@@ -33,6 +33,10 @@ const proofPoints = [
 
 const offerDisplayOrder = ["Synthetic Oil Change", "Repair Savings", "Smog Certificate"];
 
+function getOfferVisualClass(title: string) {
+  return title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
+
 export default function HomePage() {
   const businessSchema = getBusinessSchema();
   const faqSchema = getFaqSchema();
@@ -152,7 +156,7 @@ export default function HomePage() {
             {displayOffers.map((offer) => (
               <Link
                 key={offer.title}
-                className="offer-visual-card"
+                className={`offer-visual-card offer-visual-card-${getOfferVisualClass(offer.title)}`}
                 href="/schedule"
                 aria-label={`Request an appointment for ${offer.title}: ${offer.price}. ${offer.description}`}
               >
@@ -164,6 +168,12 @@ export default function HomePage() {
                   className="offer-visual-image"
                   sizes="(max-width: 640px) 100vw, 50vw"
                 />
+                {offer.title !== "Repair Savings" ? (
+                  <span className="coupon-price-overlay">{offer.price}</span>
+                ) : null}
+                {offer.title === "Synthetic Oil Change" ? (
+                  <span className="coupon-detail-overlay">Includes tire rotation</span>
+                ) : null}
                 <span className="coupon-disclosure-overlay">{offer.disclosure}</span>
               </Link>
             ))}
