@@ -1140,32 +1140,8 @@ span {
   height: auto;
 }
 
-.coupon-disclosure-overlay {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-  min-height: 14%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5rem 0.9rem;
-  background: #080808;
-  color: #ffffff;
-  font-size: clamp(0.62rem, 0.82vw, 0.76rem);
-  line-height: 1.22;
-  text-align: center;
-}
-
 .top-offer-rotator-image {
   object-fit: contain;
-}
-
-.top-offer-rotator .coupon-disclosure-overlay {
-  min-height: 15%;
-  padding: 0.28rem 0.55rem;
-  font-size: clamp(0.45rem, 0.65vw, 0.58rem);
 }
 
 .offer-logo {
@@ -1901,18 +1877,6 @@ span {
     top: 0.5rem;
     padding: 0.42rem 0.55rem;
     font-size: 0.75rem;
-  }
-
-  .coupon-disclosure-overlay {
-    min-height: 16%;
-    padding: 0.4rem 0.5rem;
-    font-size: 0.54rem;
-  }
-
-  .top-offer-rotator .coupon-disclosure-overlay {
-    min-height: 18%;
-    padding: 0.22rem 0.35rem;
-    font-size: 0.34rem;
   }
 
   .offer-fallback-card {

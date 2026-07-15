@@ -61,7 +61,6 @@ export function SpecialsRotator({ offers }: SpecialsRotatorProps) {
         className="top-offer-rotator-image"
         sizes="(max-width: 960px) 100vw, 33vw"
       />
-      <span className="coupon-disclosure-overlay">{activeOffer.disclosure}</span>
       <span className="top-offer-rotator-cta">View all specials</span>
       {offers.length > 1 ? (
         <span className="top-offer-rotator-dots" aria-hidden="true">

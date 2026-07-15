@@ -164,7 +164,6 @@ export default function HomePage() {
                   className="offer-visual-image"
                   sizes="(max-width: 640px) 100vw, 50vw"
                 />
-                <span className="coupon-disclosure-overlay">{offer.disclosure}</span>
               </Link>
             ))}
           </div>
