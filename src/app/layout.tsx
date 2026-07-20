@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 import { Antonio, Roboto } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
@@ -19,6 +20,8 @@ const bodyFont = Roboto({
   weight: ["400", "500", "700"],
   variable: "--font-body",
 });
+
+const googleAnalyticsId = "G-1DGY6CY4M8";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -62,6 +65,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${headingFont.variable} ${bodyFont.variable}`}>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${googleAnalyticsId}');
+          `}
+        </Script>
         <a className="skip-link" href="#main-content">
           Skip to main content
         </a>
